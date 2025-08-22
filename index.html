@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MigrantGuidePoland – Liderzy Systemu MOS 2025</title>
+  <meta name="description" content="Eksperci systemu MOS i przepisów 2025. Rekordowe terminy 30 dni, AI monitoring, obsługa PL/UA/EN/RU. Współpracujemy z kancelariami prawnymi.">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="MOS, legalizacja pobytu, karta pobytu, praca.gov.pl, AI monitoring, blockchain, biometria">
+  <meta name="author" content="MigrantGuidePoland">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://migrantguidepoland.com">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MigrantGuidePoland – Liderzy Systemu MOS 2025">
+  <meta property="og:description" content="Pierwsza firma w Polsce z pełną obsługą MOS i AI. Rekordowe terminy 30 dni.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://migrantguidepoland.com">
+  <meta property="og:image" content="https://migrantguidepoland.com/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- External Resources -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stripe JS -->
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loader"></div>
+    <div class="loading-text" data-key="loading_text">Ładowanie przyszłości legalizacji...</div>
+  </div>
+
+  <!-- User Preferences Panel -->
+  <div class="preferences-panel" id="preferencesPanel">
+    <div class="preferences-header">
+      <h4 data-key="preferences_title">Personalizacja</h4>
+      <button class="preferences-close" id="preferencesClose">&times;</button>
+    </div>
+    <div class="preferences-body">
+      <div class="preference-group">
+        <label data-key="auto_theme">Automatyczny motyw</label>
+        <input type="checkbox" id="autoTheme" class="form-check-input">
+        <small data-key="auto_theme_desc">Dostosowuje motyw do pory dnia</small>
+      </div>
+      <div class="preference-group">
+        <label data-key="preferred_service">Preferowana usługa</label>
+        <select id="preferredService" class="form-select">
+          <option value="">Wybierz usługę</option>
+          <option value="residence">Karta pobytu</option>
+          <option value="work">Zezwolenie na pracę</option>
+          <option value="citizenship">Obywatelstwo</option>
+        </select>
+      </div>
+      <div class="preference-group">
+        <label data-key="contact_method">Preferowany kontakt</label>
+        <select id="contactMethod" class="form-select">
+          <option value="phone">Telefon</option>
+          <option value="email">Email</option>
+          <option value="whatsapp">WhatsApp</option>
+        </select>
+      </div>
+      <div class="preference-group">
+        <label data-key="notifications">Kategorie powiadomień</label>
+        <div class="notification-categories">
+          <label class="checkbox-label">
+            <input type="checkbox" value="mos" checked> MOS
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="praca" checked> Praca.gov.pl
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="blockchain"> Blockchain
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" value="biometrics"> Biometria
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="login-modal" id="loginModal">
+    <div class="login-content">
+      <button class="login-close" onclick="closeLoginModal()">&times;</button>
+      <div class="login-tabs">
+        <button class="tab-btn active" data-tab="login" data-key="login_tab">Logowanie</button>
+        <button class="tab-btn" data-tab="register" data-key="register_tab">Rejestracja</button>
+      </div>
+      
+      <!-- Login Form -->
+      <div class="tab-content active" id="loginTab">
+        <h3 data-key="login_title">Zaloguj się do panelu</h3>
+        <form id="loginForm">
+          <input type="email" id="loginEmail" class="form-control" data-key="email_placeholder" placeholder="Email" required>
+          <input type="password" id="loginPassword" class="form-control" data-key="password_placeholder" placeholder="Hasło" required>
+          <div class="form-check">
+            <input type="checkbox" id="rememberMe" class="form-check-input">
+            <label for="rememberMe" data-key="remember_me">Zapamiętaj mnie</label>
+          </div>
+          <button type="submit" class="btn-gradient w-100">
+            <i class="fas fa-sign-in-alt"></i>
+            <span data-key="login_btn">Zaloguj się</span>
+          </button>
+        </form>
+        <div class="login-links">
+          <a href="#" data-key="forgot_password">Zapomniałeś hasła?</a>
+        </div>
+      </div>
+      
+      <!-- Register Form -->
+      <div class="tab-content" id="registerTab">
+        <h3 data-key="register_title">Utwórz konto</h3>
+        <form id="registerForm">
+          <input type="text" id="registerName" class="form-control" data-key="name_placeholder" placeholder="Imię i nazwisko" required>
+          <input type="email" id="registerEmail" class="form-control" data-key="email_placeholder" placeholder="Email" required>
+          <input type="tel" id="registerPhone" class="form-control" data-key="phone_placeholder" placeholder="Telefon" required>
+          <input type="password" id="registerPassword" class="form-control" data-key="password_placeholder" placeholder="Hasło" required>
+          <input type="password" id="confirmPassword" class="form-control" data-key="confirm_password_placeholder" placeholder="Potwierdź hasło" required>
+          <div class="form-check">
+            <input type="checkbox" id="acceptTerms" class="form-check-input" required>
+            <label for="acceptTerms" data-key="accept_terms">Akceptuję regulamin i politykę prywatności</label>
+          </div>
+          <button type="submit" class="btn-gradient w-100">
+            <i class="fas fa-user-plus"></i>
+            <span data-key="register_btn">Utwórz konto</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Dashboard Modal -->
+  <div class="dashboard-modal" id="dashboardModal">
+    <div class="dashboard-content">
+      <button class="dashboard-close" onclick="closeDashboard()">&times;</button>
+      <div class="dashboard-header">
+        <h3 data-key="dashboard_title">Twoje sprawy</h3>
+        <div class="user-info">
+          <span id="userName">Jan Kowalski</span>
+          <button class="btn-outline-gradient btn-sm" onclick="logout()" data-key="logout_btn">Wyloguj</button>
+        </div>
+      </div>
+      
+      <div class="dashboard-body">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="cases-list">
+              <h4 data-key="active_cases">Aktywne sprawy</h4>
+              <div id="userCases">
+                <!-- Cases will be loaded here -->
+              </div>
+            </div>
+            
+            <div class="documents-list mt-4">
+              <h4 data-key="documents">Dokumenty</h4>
+              <div id="userDocuments">
+                <!-- Documents will be loaded here -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="dashboard-sidebar">
+              <div class="quick-actions">
+                <h5 data-key="quick_actions">Szybkie akcje</h5>
+                <button class="btn-gradient btn-sm w-100 mb-2" onclick="openPaymentModal('residence')">
+                  <i class="fas fa-plus"></i>
+                  <span data-key="new_residence">Nowa karta pobytu</span>
+                </button>
+                <button class="btn-gradient btn-sm w-100 mb-2" onclick="openPaymentModal('work')">
+                  <i class="fas fa-briefcase"></i>
+                  <span data-key="new_work">Zezwolenie na pracę</span>
+                </button>
+                <button class="btn-outline-gradient btn-sm w-100" onclick="openCalendarIntegration()">
+                  <i class="fas fa-calendar"></i>
+                  <span data-key="schedule_meeting">Umów spotkanie</span>
+                </button>
+              </div>
+              
+              <div class="recommendations mt-4">
+                <h5 data-key="recommendations">Polecane dla Ciebie</h5>
+                <div id="crossSellRecommendations">
+                  <!-- Recommendations will be loaded here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Push Notification Banner -->
+  <div class="push-notification-banner" id="pushBanner">
+    <button class="close-btn" onclick="closePushBanner()">&times;</button>
+    <div>
+      <strong data-key="push_title">🔔 Otrzymuj powiadomienia!</strong><br>
+      <small data-key="push_desc">Najnowsze przepisy i terminy MOS w czasie rzeczywistym</small>
+    </div>
+  </div>
+
+  <!-- Proactive Chat Invitation -->
+  <div class="chat-invitation" id="chatInvitation">
+    <div class="chat-invitation-content">
+      <div class="chat-invitation-avatar">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="chat-invitation-text">
+        <strong data-key="chat_invitation_title">Potrzebujesz pomocy?</strong>
+        <p data-key="chat_invitation_text">Mogę pomóc z procedurami MOS i Praca.gov.pl</p>
+      </div>
+      <div class="chat-invitation-actions">
+        <button class="btn-gradient btn-sm" onclick="acceptChatInvitation()">
+          <span data-key="chat_yes">Tak, pomóż mi</span>
+        </button>
+        <button class="btn-outline btn-sm" onclick="dismissChatInvitation()">
+          <span data-key="chat_no">Nie, dziękuję</span>
+        </button>
+      </div>
+    </div>
+    <button class="chat-invitation-close" onclick="dismissChatInvitation()">&times;</button>
+  </div>
+
+  <!-- Enhanced Chat Widget -->
+  <button class="chat-toggle" id="chatToggle">
+    <i class="fas fa-comment-dots"></i>
+    <div class="chat-notification" id="chatNotification">1</div>
+  </button>
+
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <div class="chat-agent-info">
+        <div class="agent-avatar">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div>
+          <span class="agent-name" data-key="chat_agent_name">AI Asystent</span>
+          <div class="agent-status" data-key="chat_agent_status">Online 24/7</div>
+        </div>
+      </div>
+      <div class="chat-actions">
+        <button class="chat-action-btn" onclick="openCalendarIntegration()" title="Dodaj do kalendarza">
+          <i class="fas fa-calendar-plus"></i>
+        </button>
+        <button class="chat-action-btn" onclick="requestDocumentSigning()" title="Podpisz dokument">
+          <i class="fas fa-file-signature"></i>
+        </button>
+        <button class="chat-close" id="chatClose">&times;</button>
+      </div>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message bot">
+        <span data-key="chat_welcome">👋 Witaj! Jestem AI asystentem MigrantGuidePoland. Jak mogę Ci pomóc z legalizacją pobytu?</span>
+      </div>
+    </div>
+    
+    <div class="chat-quick-replies" id="chatQuickReplies">
+      <button class="quick-reply-btn" data-reply="mos">MOS</button>
+      <button class="quick-reply-btn" data-reply="praca">Praca.gov.pl</button>
+      <button class="quick-reply-btn" data-reply="obywatelstwo">Obywatelstwo</button>
+      <button class="quick-reply-btn" data-reply="terminy">Terminy</button>
+    </div>
+    
+    <div class="chat-input-container">
+      <input class="chat-input" id="chatInput" data-key="chat_placeholder" placeholder="Napisz wiadomość...">
+      <button class="chat-send" id="chatSend">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Calendar Integration Modal -->
+  <div class="calendar-modal" id="calendarModal">
+    <div class="calendar-content">
+      <button class="calendar-close" onclick="closeCalendarModal()">&times;</button>
+      <h3 data-key="calendar_title">Dodaj do kalendarza</h3>
+      
+      <div class="calendar-services">
+        <button class="calendar-service" onclick="addToGoogleCalendar()">
+          <i class="fab fa-google"></i>
+          <span>Google Calendar</span>
+        </button>
+        <button class="calendar-service" onclick="addToOutlook()">
+          <i class="fab fa-microsoft"></i>
+          <span>Outlook</span>
+        </button>
+        <button class="calendar-service" onclick="downloadICS()">
+          <i class="fas fa-download"></i>
+          <span>Pobierz .ics</span>
+        </button>
+      </div>
+      
+      <div class="calendar-event-details">
+        <h4 data-key="event_details">Szczegóły spotkania</h4>
+        <div class="event-info">
+          <div><strong data-key="event_title_label">Tytuł:</strong> <span id="eventTitle">Konsultacja MOS</span></div>
+          <div><strong data-key="event_date_label">Data:</strong> <span id="eventDate"></span></div>
+          <div><strong data-key="event_time_label">Godzina:</strong> <span id="eventTime"></span></div>
+          <div><strong data-key="event_type_label">Typ:</strong> <span id="eventType">Spotkanie online</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Document Signing Modal -->
+  <div class="signing-modal" id="signingModal">
+    <div class="signing-content">
+      <button class="signing-close" onclick="closeSigningModal()">&times;</button>
+      <h3 data-key="signing_title">Podpisz dokument elektronicznie</h3>
+      
+      <div class="signing-providers">
+        <button class="signing-provider" onclick="signWithAdobeSign()">
+          <i class="fas fa-file-pdf"></i>
+          <span>Adobe Sign</span>
+        </button>
+        <button class="signing-provider" onclick="signWithDocuSign()">
+          <i class="fas fa-signature"></i>
+          <span>DocuSign</span>
+        </button>
+        <button class="signing-provider" onclick="signWithAsseco()">
+          <i class="fas fa-certificate"></i>
+          <span>Asseco (Polska)</span>
+        </button>
+      </div>
+      
+      <div class="signing-info">
+        <div class="alert alert-info">
+          <i class="fas fa-info-circle me-2"></i>
+          <span data-key="signing_info">Po wypełnieniu formularza otrzymasz email z linkiem do bezpiecznego podpisania dokumentu.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-microchip me-2"></i>
+        <span data-key="brand">MigrantGuidePoland</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars" style="color: var(--text-primary);"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about" data-key="nav_about">O nas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#map" data-key="nav_map">Mapa terminów</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq" data-key="nav_faq">AI FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#updates" data-key="nav_updates">Prawo 2025</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services" data-key="nav_services">Usługi MOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-key="nav_contact">Kontakt 24/7</a></li>
+          <li class="nav-item">
+            <div class="nav-user-actions">
+              <button class="nav-btn" onclick="openLoginModal()" id="loginBtn">
+                <i class="fas fa-user"></i>
+                <span data-key="login_nav">Panel klienta</span>
+              </button>
+              <button class="nav-btn" onclick="openPreferences()" title="Personalizacja">
+                <i class="fas fa-cog"></i>
+              </button>
+              <div class="settings-dropdown">
+                <button class="settings-btn" id="settingsBtn">
+                  <i class="fas fa-globe"></i>
+                  <span id="currentLang">PL</span>
+                </button>
+                <div class="settings-menu" id="settingsMenu">
+                  <div class="settings-section">
+                    <div class="settings-label" data-key="theme_label">Motyw</div>
+                    <div class="theme-options">
+                      <button class="theme-btn" data-theme="light" title="Jasny">
+                        <i class="fas fa-sun"></i>
+                      </button>
+                      <button class="theme-btn active" data-theme="dark" title="Ciemny">
+                        <i class="fas fa-moon"></i>
+                      </button>
+                      <button class="theme-btn" data-theme="high-contrast" title="Wysoki kontrast">
+                        <i class="fas fa-adjust"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="settings-section">
+                    <div class="settings-label" data-key="language_label">Język</div>
+                    <div class="lang-options">
+                      <button class="lang-btn active" data-lang="pl">PL</button>
+                      <button class="lang-btn" data-lang="ua">UA</button>
+                      <button class="lang-btn" data-lang="en">EN</button>
+                      <button class="lang-btn" data-lang="ru">RU</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <a href="#updates" class="updates-banner">
+              <i class="fas fa-rocket"></i>
+              <span data-key="update_banner">SYSTEM MOS AKTYWNY | REWOLUCJA 2025</span>
+            </a>
+            <h1 class="hero-title" data-key="hero_title">Przyszłość legalizacji pobytu już dziś</h1>
+            <p class="hero-subtitle" data-key="hero_subtitle">Jako pierwsi w Polsce opanowaliśmy system MOS z AI. Rekordowe terminy 30 dni, monitoring 24/7, obsługa w 4 językach. Współpracujemy z kancelariami prawnymi.</p>
+            
+            <div class="hero-personalization" id="heroPersonalization">
+              <!-- Personalized content will be inserted here -->
+            </div>
+            
+            <div class="d-flex flex-wrap gap-3">
+              <button class="btn-gradient" onclick="smartBooking()">
+                <i class="fas fa-calendar-alt"></i>
+                <span data-key="btn_smart_booking">Inteligentne umówienie</span>
+              </button>
+              <a href="#faq" class="btn-outline-gradient">
+                <i class="fas fa-brain"></i>
+                <span data-key="btn_ai_faq">AI FAQ</span>
+              </a>
+            </div>
+            
+            <div class="hero-micro-interactions mt-4">
+              <div class="feature-hint" data-hint="ai">
+                <i class="fas fa-robot"></i>
+                <span data-key="hint_ai">AI analizuje Twoją sytuację</span>
+              </div>
+              <div class="feature-hint" data-hint="speed">
+                <i class="fas fa-bolt"></i>
+                <span data-key="hint_speed">30 dni średnio</span>
+              </div>
+              <div class="feature-hint" data-hint="support">
+                <i class="fas fa-headset"></i>
+                <span data-key="hint_support">24/7 wsparcie</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-center">
+            <div class="hero-animation">
+              <i class="fas fa-robot hero-robot"></i>
+              <div class="floating-elements">
+                <div class="floating-element" data-type="document">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="floating-element" data-type="check">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="floating-element" data-type="time">
+                  <i class="fas fa-clock"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="container">
+    <div class="stats-container fade-up">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-stat="days">
+            <div class="stat-number">30</div>
+            <div class="stat-label" data-key="stat_days">dni minimum</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-stat="electronic">
+            <div class="stat-number">100</div>
+            <div class="stat-label" data-key="stat_electronic">% Elektronizacja</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-stat="languages">
+            <div class="stat-number">4</div>
+            <div class="stat-label" data-key="stat_languages">Języki</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-stat="experience">
+            <div class="stat-number">8+</div>
+            <div class="stat-label" data-key="stat_experience">lat doświadczeń</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Interactive Map Section -->
+  <section id="map" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="map_title">Interaktywna Mapa Terminów</h2>
+      <p class="lead" data-key="map_subtitle">Sprawdź aktualne terminy rozpatrywania wniosków MOS w całej Polsce</p>
+    </div>
+    
+    <div class="map-controls fade-up mb-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="region-filters">
+            <label data-key="filter_region">Filtruj po regionie:</label>
+            <select id="regionFilter" class="form-select">
+              <option value="">Wszystkie regiony</option>
+              <option value="north">Północ (Gdańsk, Szczecin)</option>
+              <option value="center">Centrum (Warszawa, Łódź)</option>
+              <option value="south">Południe (Kraków, Katowice)</option>
+              <option value="west">Zachód (Wrocław, Poznań)</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map-view-options">
+            <label data-key="map_view">Widok:</label>
+            <div class="btn-group" role="group">
+              <button class="btn btn-outline-primary active" onclick="setMapView('regions')">
+                <i class="fas fa-map"></i> <span data-key="view_regions">Regiony</span>
+              </button>
+              <button class="btn btn-outline-primary" onclick="setMapView('offices')">
+                <i class="fas fa-building"></i> <span data-key="view_offices">Urzędy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="map-container fade-up">
+      <div class="poland-map" id="polandMap">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Realistic Poland outline -->
+          <path class="poland-outline" d="M60 140L70 110L90 85L115 70L140 65L165 60L190 58L215 55L240 52L265 50L290 48L315 52L335 60L355 75L365 95L370 115L375 135L370 155L365 175L355 195L340 215L320 235L295 250L270 260L245 265L220 270L195 275L170 272L145 268L120 260L95 245L75 225L62 200L58 175L60 150Z"/>
+          
+          <!-- Voivodeships for detailed view -->
+          <g class="voivodeships" id="voivodeshipsLayer" style="display: none;">
+            <path class="voivodeship" data-voivodeship="mazowieckie" d="M190 120L230 115L235 140L225 165L200 170L180 160L175 140Z"/>
+            <path class="voivodeship" data-voivodeship="malopolskie" d="M180 180L220 175L225 200L200 210L175 205L170 185Z"/>
+            <path class="voivodeship" data-voivodeship="dolnoslaskie" d="M120 160L160 155L165 180L140 185L115 175Z"/>
+            <!-- Add more voivodeships as needed -->
+          </g>
+        </svg>
+        
+        <!-- City markers will be positioned absolutely -->
+      </div>
+      
+      <!-- Map Legend -->
+      <div class="map-legend mt-4">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+              <div class="legend-color fast"></div>
+              <span data-key="map_fast">Szybkie (30-35 dni)</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+              <div class="legend-color medium"></div>
+              <span data-key="map_medium">Średnie (40-50 dni)</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+              <div class="legend-color slow"></div>
+              <span data-key="map_slow">Długie (60+ dni)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Office Details Panel -->
+    <div class="office-details" id="officeDetails" style="display: none;">
+      <div class="office-details-content">
+        <button class="office-details-close" onclick="closeOfficeDetails()">&times;</button>
+        <div id="officeDetailsBody">
+          <!-- Office details will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced AI FAQ Section -->
+  <section id="faq" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="faq_title">AI-Powered FAQ</h2>
+      <p class="lead" data-key="faq_subtitle">Zadaj dowolne pytanie o prawo migracyjne - AI przeszuka bazę orzeczeń, procedur i przepisów</p>
+    </div>
+    
+    <div class="faq-container fade-up">
+      <div class="faq-search-advanced">
+        <div class="search-input-container">
+          <input type="text" id="faqSearch" data-key="faq_placeholder" placeholder="Zadaj pytanie o MOS, Praca.gov.pl, obywatelstwo...">
+          <button class="search-btn" onclick="searchFAQ()">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="voice-search-btn" onclick="startVoiceSearch()" title="Wyszukiwanie głosowe">
+            <i class="fas fa-microphone"></i>
+          </button>
+        </div>
+        
+        <div class="search-filters">
+          <div class="filter-group">
+            <label data-key="search_in">Szukaj w:</label>
+            <div class="filter-options">
+              <label class="checkbox-label">
+                <input type="checkbox" value="judgments" checked> <span data-key="judgments">Orzeczenia</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="procedures" checked> <span data-key="procedures">Procedury</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="regulations" checked> <span data-key="regulations">Przepisy</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="curiosities" checked> <span data-key="curiosities">Ciekawostki</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-suggestions" id="faqSuggestions">
+        <div class="suggestion-tags">
+          <button class="suggestion-tag" onclick="searchFAQTerm('blockchain dokumenty')">Blockchain dokumenty</button>
+          <button class="suggestion-tag" onclick="searchFAQTerm('test rynku pracy')">Test rynku pracy</button>
+          <button class="suggestion-tag" onclick="searchFAQTerm('biometria karta pobytu')">Biometria</button>
+          <button class="suggestion-tag" onclick="searchFAQTerm('AI monitoring wniosków')">AI monitoring</button>
+        </div>
+      </div>
+      
+      <div class="faq-results" id="faqResults">
+        <!-- Results will be loaded here -->
+      </div>
+      
+      <div class="faq-assistant" id="faqAssistant">
+        <div class="assistant-suggestion">
+          <i class="fas fa-lightbulb"></i>
+          <span data-key="no_answer">Nie znajdź odpowiedzi? <button class="btn-link" onclick="askExpert()">Zapytaj eksperta</button></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Law Updates 2025 Section -->
+  <section id="updates" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="updates_title">Rewolucja Prawna 2025</h2>
+      <p class="lead" data-key="updates_subtitle">Najważniejsze zmiany w prawie migracyjnym</p>
+    </div>
+    
+    <div class="updates-timeline fade-up">
+      <div class="timeline-item" data-date="2025-08-01">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">1 SIERPNIA 2025</div>
+          <h3 data-key="timeline_aug_title">System MOS - Pełna Elektronizacja</h3>
+          <p data-key="timeline_aug_desc">Moduł Obsługi Spraw (mos.cudzoziemcy.gov.pl) umożliwia składanie wniosków online z podpisem elektronicznym. Kreator w 7 językach, priorytetowa rejestracja.</p>
+          <div class="timeline-features">
+            <span class="feature-badge success">✅ <span data-key="badge_active">Aktywne</span></span>
+            <span class="feature-badge info">🌐 <span data-key="badge_languages">7 języków</span></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item" data-date="2025-06-01">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">1 CZERWCA 2025</div>
+          <h3 data-key="timeline_jun_title">Portal Praca.gov.pl - Koniec z Testem</h3>
+          <p data-key="timeline_jun_desc">Zniesienie testu rynku pracy dla większości zawodów. Nowy portal elektroniczny, kary 3000-50000 zł za naruszenia.</p>
+          <div class="timeline-features">
+            <span class="feature-badge warning">⚠️ <span data-key="badge_fines">Kary 3-50k zł</span></span>
+            <span class="feature-badge success">✅ <span data-key="badge_no_test">Bez testu</span></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item current" data-date="2025-08-22">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-date" data-key="badge_current">AKTUALNIE</div>
+          <h3 data-key="timeline_now_title">Rekordowe Terminy</h3>
+          <p data-key="timeline_now_desc">Wrocław: 30 dni, Warszawa: 45 dni, Kraków: 40 dni. AI monitoring 24/7 zapewnia najszybsze powiadomienia.</p>
+          <div class="timeline-features">
+            <span class="feature-badge primary">🤖 <span data-key="badge_ai_monitoring">AI Monitoring</span></span>
+            <span class="feature-badge success">⚡ <span data-key="badge_30_days">30 dni</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section with Micro-interactions -->
+  <section id="about" class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 fade-left">
+        <h2 class="display-4 fw-bold mb-4" data-key="about_title">Liderzy Nowego Prawa 2025</h2>
+        <p class="lead mb-4" data-key="about_intro">Jako pierwsi w Polsce opanowaliśmy system MOS i nowe przepisy 2025. Nasze systemy AI zapewniają najszybsze terminy w kraju. Współpracujemy z certyfikowanymi kancelariami prawnymi.</p>
+        <p data-key="about_story">Przewidząliśmy rewolucję prawną z 2-letnim wyprzedzeniem. Dziś jesteśmy jedyną firmą oferującą kompletną obsługę elektroniczną z gwarancją jakości, świadcząc usługi doradcze w ramach współpracy z kancelariami prawnymi.</p>
+        
+        <div class="about-features">
+          <div class="feature-item" data-feature="certified">
+            <div class="feature-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="feature-content">
+              <h5 data-key="about_certified">Certyfikowani eksperci MOS</h5>
+              <p class="feature-tooltip" data-key="certified_tooltip">Jako jedyni posiadamy pełne certyfikaty do obsługi systemu MOS</p>
+            </div>
+          </div>
+          
+          <div class="feature-item" data-feature="fastest">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="feature-content">
+              <h5 data-key="about_fastest">Najszybsze terminy w Polsce</h5>
+              <p class="feature-tooltip" data-key="fastest_tooltip">AI optymalizuje kolejność dokumentów dla maksymalnej szybkości</p>
+            </div>
+          </div>
+          
+          <div class="feature-item" data-feature="legal">
+            <div class="feature-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="feature-content">
+              <h5 data-key="about_legal_cooperation">Współpraca z kancelariami</h5>
+              <p class="feature-tooltip" data-key="legal_tooltip">Reprezentacja prawna w najskomplikowanych sprawach</p>
+            </div>
+          </div>
+          
+          <div class="feature-item" data-feature="compliance">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="feature-content">
+              <h5 data-key="about_legal_compliance">Pełna zgodność z przepisami</h5>
+              <p class="feature-tooltip" data-key="compliance_tooltip">100% zgodność z najnowszymi przepisami 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="row g-4">
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center hover-reveal" data-service="ai">
+              <div class="icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h5 data-key="feat_ai_title">AI Automatyzacja</h5>
+              <p data-key="feat_ai_desc">Systemy AI do analizy dokumentów i predykcji terminów</p>
+              <div class="hover-tooltip">
+                <p data-key="ai_tooltip">Nasze AI analizuje 10,000 dokumentów dziennie, przewidując terminy z 95% dokładnością</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center hover-reveal" data-service="speed">
+              <div class="icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h5 data-key="feat_speed_title">30 dni</h5>
+              <p data-key="feat_speed_desc">Rekordowe terminy dzięki MOS</p>
+              <div class="hover-tooltip">
+                <p data-key="speed_tooltip">Rekord: 3 dni na kartę pobytu we Wrocławiu dzięki AI optymalizacji</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center hover-reveal" data-service="experts">
+              <div class="icon">
+                <i class="fas fa-users-gear"></i>
+              </div>
+              <h5 data-key="feat_experts_title">Eksperci</h5>
+              <p data-key="feat_experts_desc">Certyfikowani specjaliści</p>
+              <div class="hover-tooltip">
+                <p data-key="experts_tooltip">Zespół 15 ekspertów z doświadczeniem w prawie migracyjnym</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center hover-reveal" data-service="global">
+              <div class="icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h5 data-key="feat_global_title">4 Języki</h5>
+              <p data-key="feat_global_desc">PL, UA, EN, RU</p>
+              <div class="hover-tooltip">
+                <p data-key="global_tooltip">Obsługa w 4 językach + automatyczne tłumaczenie na 47 języków</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Services -->
+  <section id="services" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="services_title">Usługi Przyszłości</h2>
+      <p class="lead" data-key="services_subtitle">Pełna obsługa elektroniczna z AI w współpracy z kancelariami prawnymi</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 fade-up">
+        <div class="service-card hover-reveal" data-service="residence">
+          <div class="service-icon">
+            <i class="fas fa-id-card"></i>
+          </div>
+          <h3 data-key="service_residence_title">Karta Pobytu przez MOS</h3>
+          <p data-key="service_residence_desc">Pierwsza w Polsce pełna obsługa przez system MOS z AI. Podpis elektroniczny, kreator w 7 językach, terminy od 30 dni.</p>
+          
+          <div class="service-features">
+            <div class="feature-badge success">✅ 100% przez MOS</div>
+            <div class="feature-badge info">🔐 Podpis elektroniczny</div>
+            <div class="feature-badge primary">🤖 AI monitoring 24/7</div>
+          </div>
+          
+          <div class="service-price">
+            <div class="h4 text-success mb-3">od 1.890 zł</div>
+            <button class="btn-gradient" onclick="openPaymentModal('residence')">
+              <i class="fas fa-credit-card"></i>
+              <span data-key="btn_pay_now">Opłać teraz</span>
+            </button>
+          </div>
+          
+          <div class="hover-tooltip">
+            <h5>Korzyści pakietu:</h5>
+            <ul>
+              <li>Gwarancja terminu 30 dni</li>
+              <li>AI analiza dokumentów</li>
+              <li>24/7 monitoring statusu</li>
+              <li>Wsparcie prawne</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 fade-up">
+        <div class="service-card hover-reveal" data-service="work">
+          <div class="service-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 data-key="service_work_title">Zezwolenia Praca.gov.pl</h3>
+          <p data-key="service_work_desc">Obsługa nowego systemu Praca.gov.pl. Bez testu rynku, elektroniczne składanie, ochrona przed karami.</p>
+          
+          <div class="service-features">
+            <div class="feature-badge success">✅ Bez testu rynku</div>
+            <div class="feature-badge info">💻 100% cyfrowo</div>
+            <div class="feature-badge warning">⚠️ Ochrona przed karami</div>
+          </div>
+          
+          <div class="service-price">
+            <div class="h4 text-success mb-3">od 1.590 zł</div>
+            <button class="btn-gradient" onclick="openPaymentModal('work')">
+              <i class="fas fa-credit-card"></i>
+              <span data-key="btn_pay_now">Opłać teraz</span>
+            </button>
+          </div>
+          
+          <div class="hover-tooltip">
+            <h5>Nowy system 2025:</h5>
+            <ul>
+              <li>Brak testu rynku pracy</li>
+              <li>Elektroniczne składanie</li>
+              <li>Kary 3-50k zł za błędy</li>
+              <li>Nasze zabezpieczenie</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 fade-up">
+        <div class="service-card hover-reveal" data-service="citizenship">
+          <div class="service-icon">
+            <i class="fas fa-flag"></i>
+          </div>
+          <h3 data-key="service_citizenship_title">Obywatelstwo Premium</h3>
+          <p data-key="service_citizenship_desc">Kompleksowa ścieżka do obywatelstwa z AI analizą uprawnień. Pełna dokumentacja, współpraca z kancelariami prawnymi.</p>
+          
+          <div class="service-features">
+            <div class="feature-badge primary">🧠 AI analiza uprawnień</div>
+            <div class="feature-badge info">📋 Pełna dokumentacja</div>
+            <div class="feature-badge success">⚖️ Kancelarie prawne</div>
+          </div>
+          
+          <div class="service-price">
+            <div class="h4 text-success mb-3">od 4.790 zł</div>
+            <button class="btn-gradient" onclick="openPaymentModal('citizenship')">
+              <i class="fas fa-credit-card"></i>
+              <span data-key="btn_pay_now">Opłać teraz</span>
+            </button>
+          </div>
+          
+          <div class="hover-tooltip">
+            <h5>Pakiet Premium:</h5>
+            <ul>
+              <li>AI sprawdza uprawnienia</li>
+              <li>Kompleksowa dokumentacja</li>
+              <li>Reprezentacja prawna</li>
+              <li>Obsługa odwołań</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cross-selling recommendations -->
+    <div class="cross-sell-recommendations mt-5" id="crossSellSection" style="display: none;">
+      <div class="recommendations-header">
+        <h4 data-key="recommended_for_you">Polecane dla Ciebie</h4>
+        <p data-key="based_on_selection">Na podstawie Twoich wyborów</p>
+      </div>
+      <div id="recommendationCards">
+        <!-- Recommendation cards will be inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="contact_title">Kontakt 24/7</h2>
+      <p class="lead" data-key="contact_subtitle">Najwyższa jakość obsługi eksperckiej</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="contact-card hover-reveal" data-contact="phone">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h5 data-key="contact_phone_title">Telefon Ekspercki</h5>
+          <p><a href="tel:+48512617106" class="contact-link">+48 512 617 106</a></p>
+          <small data-key="contact_phone_hours">7 dni w tygodniu</small>
+          <div class="hover-tooltip">
+            <p data-key="phone_tooltip">Bezpośredni kontakt z ekspertem. Średni czas oczekiwania: 30 sekund</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="contact-card hover-reveal" data-contact="email">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h5 data-key="contact_email_title">Email Premium</h5>
+          <p><a href="mailto:migrantguidepoland@gmail.com" class="contact-link">migrantguidepoland@gmail.com</a></p>
+          <small data-key="contact_email_response">Odpowiedź w 2h</small>
+          <div class="hover-tooltip">
+            <p data-key="email_tooltip">Priorytetowa obsługa mailowa z gwarancją odpowiedzi</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="contact-card hover-reveal" data-contact="whatsapp">
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h5 data-key="contact_whatsapp_title">WhatsApp AI</h5>
+          <p><a href="https://api.whatsapp.com/send?phone=48512617106&text=Witam!%20Interesuje%20mnie%20legalizacja%20pobytu%20przez%20system%20MOS" target="_blank" class="contact-link" data-key="contact_whatsapp_link">Czat + Ekspert</a></p>
+          <small data-key="contact_whatsapp_instant">AI 24/7 + Ekspert</small>
+          <div class="hover-tooltip">
+            <p data-key="whatsapp_tooltip">AI bot odpowiada natychmiast, ekspert włącza się w 5 minut</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="contact-card hover-reveal" data-contact="facebook">
+          <div class="contact-icon">
+            <i class="fab fa-facebook"></i>
+          </div>
+          <h5 data-key="contact_facebook_title">Facebook</h5>
+          <p><a href="https://www.facebook.com/migrantguidepoland" target="_blank" class="contact-link" data-key="contact_facebook_link">@MigrantGuidePoland</a></p>
+          <small data-key="contact_facebook_desc">Aktualności i porady</small>
+          <div class="hover-tooltip">
+            <p data-key="facebook_tooltip">Codzienne aktualizacje o zmianach w prawie migracyjnym</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Modal -->
+  <div class="payment-modal" id="paymentModal">
+    <div class="payment-content">
+      <button class="payment-close" onclick="closePaymentModal()">&times;</button>
+      <h3 class="mb-4" data-key="payment_title">Wybierz metodę płatności</h3>
+      
+      <div id="serviceInfo"></div>
+      
+      <div class="payment-methods" id="paymentMethods">
+        <div class="payment-method" data-method="stripe">
+          <input type="radio" name="paymentMethod" value="stripe" id="stripe">
+          <div class="payment-method-icon">
+            <i class="fab fa-stripe"></i>
+          </div>
+          <div>
+            <strong data-key="payment_card">Karta płatnicza</strong><br>
+            <small data-key="payment_card_desc">Visa, Mastercard, PayPal</small>
+          </div>
+        </div>
+        
+        <div class="payment-method" data-method="przelewy24">
+          <input type="radio" name="paymentMethod" value="przelewy24" id="p24">
+          <div class="payment-method-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div>
+            <strong>Przelewy24</strong><br>
+            <small data-key="payment_p24_desc">Banki polskie, BLIK</small>
+          </div>
+        </div>
+        
+        <div class="payment-method" data-method="crypto">
+          <input type="radio" name="paymentMethod" value="crypto" id="crypto">
+          <div class="payment-method-icon">
+            <i class="fab fa-bitcoin"></i>
+          </div>
+          <div>
+            <strong data-key="payment_crypto">Kryptowaluty</strong><br>
+            <small data-key="payment_crypto_desc">Bitcoin, Ethereum, USDC</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="payment-form" id="paymentForm" style="display: none;">
+        <!-- Payment form will be dynamically inserted here -->
+      </div>
+      
+      <div class="text-center mt-4">
+        <button class="btn-gradient" onclick="processPayment()">
+          <i class="fas fa-lock"></i>
+          <span data-key="btn_secure_payment">Bezpieczna płatność</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
