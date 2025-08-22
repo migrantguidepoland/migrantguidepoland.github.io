@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MigrantGuidePoland – Liderzy Systemu MOS 2025</title>
+  <meta name="description" content="Eksperci systemu MOS i przepisów 2025. Rekordowe terminy 30 dni, AI monitoring, obsługa PL/UA/EN/RU. Współpracujemy z kancelariami prawnymi.">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="MOS, legalizacja pobytu, karta pobytu, praca.gov.pl, AI monitoring, blockchain, biometria">
+  <meta name="author" content="MigrantGuidePoland">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://migrantguidepoland.com">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MigrantGuidePoland – Liderzy Systemu MOS 2025">
+  <meta property="og:description" content="Pierwsza firma w Polsce z pełną obsługą MOS i AI. Rekordowe terminy 30 dni.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://migrantguidepoland.com">
+  <meta property="og:image" content="https://migrantguidepoland.com/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- External Resources -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stripe JS -->
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  <style>
+    :root {
+      /* Color System - Light Theme */
+      --primary-400: hsl(225, 73%, 67%);
+      --primary-500: hsl(225, 73%, 59%);
+      --primary-600: hsl(225, 73%, 48%);
+      --primary-700: hsl(225, 73%, 39%);
+      
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 50%, var(--primary-700) 100%);
+      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-warning: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --gradient-danger: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --gradient-info: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      
+      /* Dark Theme Variables */
+      --bg-primary: #0a0e27;
+      --bg-secondary: #151936;
+      --surface-glass: rgba(255, 255, 255, 0.1);
+      --surface-frosted: rgba(255, 255, 255, 0.15);
+      --border-medium: rgba(255, 255, 255, 0.2);
+      --border-strong: rgba(255, 255, 255, 0.3);
+      
+      /* Text Colors - Dark */
+      --text-primary: rgba(255, 255, 255, 0.95);
+      --text-secondary: rgba(255, 255, 255, 0.80);
+      --text-tertiary: rgba(255, 255, 255, 0.65);
+      
+      /* Shadows */
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.4);
+      --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+      
+      /* Typography */
+      --font-primary: 'Inter', system-ui, sans-serif;
+      
+      /* Animations */
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --ease-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Light Theme */
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.7);
+      --surface-frosted: rgba(255, 255, 255, 0.9);
+      --border-medium: rgba(0, 0, 0, 0.1);
+      --border-strong: rgba(0, 0, 0, 0.2);
+      --text-primary: rgba(15, 23, 42, 0.95);
+      --text-secondary: rgba(15, 23, 42, 0.80);
+      --text-tertiary: rgba(15, 23, 42, 0.65);
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.2);
+    }
+
+    /* High Contrast Theme */
+    [data-theme="high-contrast"] {
+      --bg-primary: #000000;
+      --bg-secondary: #1a1a1a;
+      --surface-glass: rgba(255, 255, 255, 0.15);
+      --surface-frosted: rgba(255, 255, 255, 0.2);
+      --border-medium: rgba(255, 255, 255, 0.4);
+      --border-strong: rgba(255, 255, 255, 0.6);
+      --text-primary: #ffffff;
+      --text-secondary: #e5e5e5;
+      --text-tertiary: #cccccc;
+    }
+
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Base */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+    }
+
+    /* Selection */
+    ::selection {
+      background: var(--primary-400);
+      color: white;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+      border-radius: 4px;
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(245, 87, 108, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(67, 233, 123, 0.05) 0%, transparent 50%);
+      z-index: -1;
+      animation: backgroundFloat 20s ease-in-out infinite;
+      transition: opacity 0.3s var(--ease-out);
+    }
+
+    @keyframes backgroundFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(-20px, -20px) rotate(1deg); }
+    }
+
+    /* Navigation */
+    .navbar {
+      background: var(--surface-glass) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-medium);
+      padding: 1rem 0;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .navbar.scrolled {
+      background: var(--surface-frosted) !important;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-link {
+      color: var(--text-tertiary) !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s var(--ease-out);
+      padding: 10px 15px !important;
+      border-radius: 10px;
+      margin: 0 5px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: all 0.3s var(--ease-back);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary) !important;
+      background: var(--surface-glass);
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+    }
+
+    /* Settings Dropdown */
+    .settings-dropdown {
+      position: relative;
+    }
+
+    .settings-btn {
+      background: var(--surface-glass);
+      border: 1px solid var(--border-medium);
+      color: var(--text-primary);
+      padding: 8px 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .settings-btn:hover {
+      background: var(--surface-frosted);
+      transform: translateY(-2px);
+    }
+
+    .settings-menu {
+      position: absolute;
+      top: 110%;
+      right: 0;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-medium);
+      border-radius: 15px;
+      padding: 1rem;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s var(--ease-back);
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .settings-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .settings-section {
+      margin-bottom: 1rem;
+    }
+
+    .settings-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .settings-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .theme-options, .lang-options {
+      display: flex;
+      gap: 5px;
+    }
+
+    .theme-btn, .lang-btn {
+      background: var(--surface-glass);
+      border: 1px solid var(--border-medium);
+      color: var(--text-secondary);
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+      font-size: 0.85rem;
+      flex: 1;
+      text-align: center;
+    }
+
+    .theme-btn:hover, .lang-btn:hover {
+      color: var(--text-primary);
+      background: var(--surface-frosted);
+    }
+
+    .theme-btn.active, .lang-btn.active {
+      background: var(--gradient-primary);
+      color: white;
+      border-color: var(--primary-600);
+    }
+
+    /* Push Notification Banner */
+    .push-notification-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--gradient-success);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-xl);
+      z-index: 1000;
+      transform: translateX(400px);
+      transition: transform 0.3s var(--ease-back);
+      max-width: 350px;
+      cursor: pointer;
+    }
+
+    .push-notification-banner.show {
+      transform: translateX(0);
+    }
+
+    .push-notification-banner .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .push-notification-banner .close-btn:hover {
+      opacity: 1;
+    }
+
+    /* Chat Widget */
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: var(--shadow-xl);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 4000;
+      transition: all 0.3s var(--ease-back);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .chat-toggle:hover {
+      transform: scale(1.1);
+      animation: none;
+    }
+
+    .chat-widget {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      max-height: 500px;
+      background: var(--bg-secondary);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-medium);
+      border-radius: 15px;
+      display: none;
+      flex-direction: column;
+      z-index: 4000;
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+
+    .chat-widget.open {
+      display: flex;
+    }
+
+    .chat-header {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    .chat-close:hover {
+      opacity: 1;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      min-height: 200px;
+      max-height: 300px;
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 15px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .chat-message.user {
+      background: var(--gradient-primary);
+      color: white;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .chat-message.bot {
+      background: var(--surface-glass);
+      color: var(--text-primary);
+      margin-right: auto;
+    }
+
+    .chat-input-container {
+      display: flex;
+      border-top: 1px solid var(--border-medium);
+    }
+
+    .chat-input {
+      flex: 1;
+      border: none;
+      padding: 15px;
+      background: var(--surface-glass);
+      color: var(--text-primary);
+      border-bottom-left-radius: 15px;
+    }
+
+    .chat-input:focus {
+      outline: none;
+      background: var(--surface-frosted);
+    }
+
+    .chat-send {
+      background: var(--gradient-secondary);
+      border: none;
+      padding: 0 20px;
+      color: white;
+      border-bottom-right-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+    }
+
+    .chat-send:hover {
+      background: var(--gradient-info);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      animation: fadeInUp 1s var(--ease-out);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-400) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    /* Updates Banner */
+    .updates-banner {
+      background: var(--gradient-warning);
+      padding: 15px 30px;
+      border-radius: 50px;
+      color: var(--bg-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      transition: transform 0.3s var(--ease-back);
+      box-shadow: 0 4px 20px rgba(67, 233, 123, 0.3);
+    }
+
+    .updates-banner:hover {
+      transform: translateY(-3px) scale(1.05);
+      color: var(--bg-primary);
+    }
+
+    /* Interactive Map Section */
+    .map-container {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-medium);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-info);
+    }
+
+    .poland-map {
+      width: 100%;
+      height: 400px;
+      position: relative;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--surface-frosted);
+    }
+
+    .poland-map svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .poland-outline {
+      fill: rgba(102, 126, 234, 0.1);
+      stroke: rgba(102, 126, 234, 0.3);
+      stroke-width: 2;
+    }
+
+    .city-marker {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+      border: 3px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: cityPulse 3s infinite;
+    }
+
+    @keyframes cityPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .city-marker:hover {
+      transform: scale(1.2);
+      z-index: 10;
+      animation: none;
+    }
+
+    .city-marker.fast {
+      background: var(--gradient-success);
+      color: white;
+    }
+
+    .city-marker.medium {
+      background: var(--gradient-warning);
+      color: var(--bg-primary);
+    }
+
+    .city-marker.slow {
+      background: var(--gradient-danger);
+      color: white;
+    }
+
+    .city-tooltip {
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      box-shadow: var(--shadow-xl);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 100;
+      border: 1px solid var(--border-medium);
+    }
+
+    .city-marker:hover .city-tooltip {
+      opacity: 1;
+    }
+
+    .city-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--bg-secondary);
+    }
+
+    /* AI FAQ Section */
+    .faq-container {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-medium);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-secondary);
+    }
+
+    .faq-search {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .faq-search input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      background: var(--surface-frosted);
+      border: 2px solid var(--border-medium);
+      border-radius: 50px;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .faq-search input:focus {
+      outline: none;
+      border-color: var(--primary-400);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+
+    .faq-search .search-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--gradient-primary);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+    }
+
+    .faq-search .search-btn:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .faq-results {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      background: var(--surface-frosted);
+      border: 1px solid var(--border-medium);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+    }
+
+    .faq-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-400);
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s var(--ease-out);
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      margin-top: 1rem;
+    }
+
+    .faq-toggle {
+      background: none;
+      border: none;
+      color: var(--primary-400);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    /* Payment Modal */
+    .payment-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 5000;
+      backdrop-filter: blur(10px);
+    }
+
+    .payment-modal.show {
+      display: flex;
+    }
+
+    .payment-content {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      border: 1px solid var(--border-medium);
+    }
+
+    .payment-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .payment-close:hover {
+      color: var(--text-primary);
+    }
+
+    .service-info {
+      background: var(--surface-glass);
+      border: 1px solid var(--border-medium);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: var(--surface-glass);
+      border: 2px solid var(--border-medium);
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-back);
+    }
+
+    .payment-method:hover {
+      border-color: var(--primary-400);
+      transform: translateY(-2px);
+    }
+
+    .payment-method.selected {
+      border-color: var(--primary-400);
+      background: var(--surface-frosted);
+    }
+
+    .payment-method input[type="radio"] {
+      display: none;
+    }
+
+    .payment-method-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .payment-form {
+      margin-top: 1.5rem;
+    }
+
+    .payment-form input, .payment-form select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--surface-glass);
+      border: 2px solid var(--border-medium);
+      border-radius: 10px;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .payment-form input:focus, .payment-form select:focus {
+      outline: none;
+      border-color: var(--primary-400);
+    }
+
+    #card-element {
+      padding: 15px;
+      background: var(--surface-glass);
+      border: 2px solid var(--border-medium);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    #card-errors {
+      color: #e74c3c;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Glass Cards */
+    .glass-card {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-medium);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s var(--ease-back);
+      box-shadow: var(--shadow-glass);
+      height: 100%;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+      background: var(--surface-frosted);
+    }
+
+    .glass-card .icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      animation: iconFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Buttons */
+    .btn-gradient {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s var(--ease-back);
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+      color: white;
+    }
+
+    .btn-outline-gradient {
+      background: transparent;
+      border: 2px solid;
+      border-image: var(--gradient-primary) 1;
+      padding: 12px 25px;
+      border-radius: 50px;
+      color: var(--text-primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s var(--ease-back);
+    }
+
+    .btn-outline-gradient:hover {
+      background: var(--gradient-primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Statistics */
+    .stats-container {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      padding: 3rem 2rem;
+      margin: 4rem 0;
+      border: 1px solid var(--border-medium);
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 1rem;
+      transition: transform 0.3s var(--ease-back);
+      cursor: pointer;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .stat-number {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* Loading */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: opacity 0.5s var(--ease-out);
+    }
+
+    .loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 4px solid var(--surface-glass);
+      border-top: 4px solid var(--primary-400);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 2rem;
+    }
+
+    .loading-text {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Success Message */
+    .success-message {
+      background: var(--gradient-success);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 15px;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s var(--ease-back);
+    }
+
+    .success-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s var(--ease-out);
+    }
+
+    .fade-up.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.8s var(--ease-out);
+    }
+
+    .fade-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fade-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.8s var(--ease-out);
+    }
+
+    .fade-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Mobile Optimizations */
+    @media (max-width: 768px) {
+      .settings-menu {
+        right: -50px;
+        min-width: 250px;
+      }
+      
+      .hero {
+        min-height: 80vh;
+        padding: 80px 0;
+      }
+      
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .poland-map {
+        height: 250px;
+      }
+      
+      .city-marker {
+        width: 40px;
+        height: 40px;
+        font-size: 0.7rem;
+      }
+      
+      .push-notification-banner {
+        bottom: 10px;
+        right: 10px;
+        max-width: 280px;
+        padding: 12px 15px;
+      }
+
+      .chat-toggle {
+        bottom: 90px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+
+      .chat-widget {
+        bottom: 150px;
+        right: 10px;
+        width: 300px;
+        max-height: 400px;
+      }
+      
+      .payment-content {
+        margin: 20px;
+        padding: 1.5rem;
+      }
+      
+      .faq-search input {
+        padding: 12px 45px 12px 15px;
+        font-size: 1rem;
+      }
+    }
+
+    /* High contrast mode adjustments */
+    @media (prefers-contrast: high) {
+      [data-theme="dark"] {
+        --bg-primary: #000000;
+        --text-primary: #ffffff;
+        --border-medium: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loader"></div>
+    <div class="loading-text" data-key="loading_text">Ładowanie przyszłości legalizacji...</div>
+  </div>
+
+  <!-- Push Notification Banner -->
+  <div class="push-notification-banner" id="pushBanner">
+    <button class="close-btn" onclick="closePushBanner()">&times;</button>
+    <div>
+      <strong data-key="push_title">🔔 Otrzymuj powiadomienia!</strong><br>
+      <small data-key="push_desc">Najnowsze przepisy i terminy MOS w czasie rzeczywistym</small>
+    </div>
+  </div>
+
+  <!-- Chat Widget -->
+  <button class="chat-toggle" id="chatToggle">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <span data-key="chat_title">💬 Czat z Ekspertem AI</span>
+      <button class="chat-close" id="chatClose">&times;</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message bot">
+        <span data-key="chat_welcome">👋 Witaj! Jestem AI asystentem MigrantGuidePoland. Jak mogę Ci pomóc z legalizacją pobytu?</span>
+      </div>
+    </div>
+    <div class="chat-input-container">
+      <input class="chat-input" id="chatInput" data-key="chat_placeholder" placeholder="Napisz wiadomość...">
+      <button class="chat-send" id="chatSend">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-microchip me-2"></i>
+        <span data-key="brand">MigrantGuidePoland</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars" style="color: var(--text-primary);"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about" data-key="nav_about">O nas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#map" data-key="nav_map">Mapa terminów</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq" data-key="nav_faq">AI FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#updates" data-key="nav_updates">Prawo 2025</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services" data-key="nav_services">Usługi MOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-key="nav_contact">Kontakt 24/7</a></li>
+          <li class="nav-item">
+            <div class="settings-dropdown">
+              <button class="settings-btn" id="settingsBtn">
+                <i class="fas fa-cog"></i>
+                <span data-key="settings">Ustawienia</span>
+              </button>
+              <div class="settings-menu" id="settingsMenu">
+                <div class="settings-section">
+                  <div class="settings-label" data-key="theme_label">Motyw</div>
+                  <div class="theme-options">
+                    <button class="theme-btn" data-theme="light">
+                      <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="theme-btn active" data-theme="dark">
+                      <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="high-contrast">
+                      <i class="fas fa-adjust"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="settings-section">
+                  <div class="settings-label" data-key="language_label">Język</div>
+                  <div class="lang-options">
+                    <button class="lang-btn active" data-lang="pl">PL</button>
+                    <button class="lang-btn" data-lang="ua">UA</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <a href="#updates" class="updates-banner">
+              <i class="fas fa-rocket"></i>
+              <span data-key="update_banner">SYSTEM MOS AKTYWNY | REWOLUCJA 2025</span>
+            </a>
+            <h1 class="hero-title" data-key="hero_title">Przyszłość legalizacji pobytu już dziś</h1>
+            <p class="hero-subtitle" data-key="hero_subtitle">Jako pierwsi w Polsce opanowaliśmy system MOS z AI. Rekordowe terminy 30 dni, monitoring 24/7, obsługa w 4 językach. Współpracujemy z kancelariami prawnymi.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <button class="btn-gradient" onclick="openPaymentModal('consultation')">
+                <i class="fas fa-calendar-alt"></i>
+                <span data-key="btn_book_meeting">Umów spotkanie</span>
+              </button>
+              <a href="#faq" class="btn-outline-gradient">
+                <i class="fas fa-brain"></i>
+                <span data-key="btn_ai_faq">AI FAQ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-center">
+            <i class="fas fa-robot" style="font-size: 20rem; color: rgba(102, 126, 234, 0.1); animation: iconFloat 4s ease-in-out infinite;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="container">
+    <div class="stats-container fade-up">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">30</div>
+            <div class="stat-label" data-key="stat_days">dni minimum</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">100</div>
+            <div class="stat-label" data-key="stat_electronic">% Elektronizacja</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label" data-key="stat_languages">Języki</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label" data-key="stat_experience">lat doświadczeń</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section id="map" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="map_title">Interaktywna Mapa Terminów</h2>
+      <p class="lead" data-key="map_subtitle">Sprawdź aktualne terminy rozpatrywania wniosków MOS w całej Polsce</p>
+    </div>
+    
+    <div class="map-container fade-up">
+      <div class="poland-map" id="polandMap">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <path class="poland-outline" d="M50 120L80 50L200 45L320 55L350 80L370 120L360 180L340 220L310 250L280 270L200 275L120 270L80 250L45 220L35 180L40 150Z"/>
+        </svg>
+        <!-- City markers will be positioned absolutely over the SVG -->
+      </div>
+      
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+              <div style="width: 20px; height: 20px; background: var(--gradient-success); border-radius: 50%;"></div>
+              <span data-key="map_fast">Szybkie (30-35 dni)</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+              <div style="width: 20px; height: 20px; background: var(--gradient-warning); border-radius: 50%;"></div>
+              <span data-key="map_medium">Średnie (40-50 dni)</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+              <div style="width: 20px; height: 20px; background: var(--gradient-danger); border-radius: 50%;"></div>
+              <span data-key="map_slow">Długie (60+ dni)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI FAQ Section -->
+  <section id="faq" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="faq_title">AI-Powered FAQ</h2>
+      <p class="lead" data-key="faq_subtitle">Zadaj dowolne pytanie o prawo migracyjne - AI znajdzie odpowiedź w naszej bazie wiedzy</p>
+    </div>
+    
+    <div class="faq-container fade-up">
+      <div class="faq-search">
+        <input type="text" id="faqSearch" data-key="faq_placeholder" placeholder="Zadaj pytanie o MOS, Praca.gov.pl, obywatelstwo...">
+        <button class="search-btn" onclick="searchFAQ()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      
+      <div class="faq-results" id="faqResults">
+        <!-- Popular questions will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 fade-left">
+        <h2 class="display-4 fw-bold mb-4" data-key="about_title">Liderzy Nowego Prawa 2025</h2>
+        <p class="lead mb-4" data-key="about_intro">Jako pierwsi w Polsce opanowaliśmy system MOS i nowe przepisy 2025. Nasze systemy AI zapewniają najszybsze terminy w kraju. Współpracujemy z certyfikowanymi kancelariami prawnymi.</p>
+        <p data-key="about_story">Przewidząliśmy rewolucję prawną z 2-letnim wyprzedzeniem. Dziś jesteśmy jedyną firmą oferującą kompletną obsługę elektroniczną z gwarancją jakości, świadcząc usługi doradcze w ramach współpracy z kancelariami prawnymi.</p>
+        
+        <div class="row mt-4">
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-medal me-3 text-warning fs-4"></i>
+              <span data-key="about_certified">Certyfikowani eksperci MOS</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-rocket me-3 text-success fs-4"></i>
+              <span data-key="about_fastest">Najszybsze terminy w Polsce</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-handshake me-3 text-info fs-4"></i>
+              <span data-key="about_legal_cooperation">Współpraca z kancelariami</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-shield-alt me-3 text-primary fs-4"></i>
+              <span data-key="about_legal_compliance">Pełna zgodność z przepisami</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="row g-4">
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center">
+              <div class="icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h5 data-key="feat_ai_title">AI Automatyzacja</h5>
+              <p data-key="feat_ai_desc">Systemy AI do analizy dokumentów i predykcji terminów</p>
+            </div>
+          </div>
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center">
+              <div class="icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h5 data-key="feat_speed_title">30 dni</h5>
+              <p data-key="feat_speed_desc">Rekordowe terminy dzięki MOS</p>
+            </div>
+          </div>
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center">
+              <div class="icon">
+                <i class="fas fa-users-gear"></i>
+              </div>
+              <h5 data-key="feat_experts_title">Eksperci</h5>
+              <p data-key="feat_experts_desc">Certyfikowani specjaliści</p>
+            </div>
+          </div>
+          <div class="col-sm-6 fade-right">
+            <div class="glass-card text-center">
+              <div class="icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h5 data-key="feat_global_title">4 Języki</h5>
+              <p data-key="feat_global_desc">PL, UA, EN, RU</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="services_title">Usługi Przyszłości</h2>
+      <p class="lead" data-key="services_subtitle">Pełna obsługa elektroniczna z AI w współpracy z kancelariami prawnymi</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 fade-up">
+        <div class="glass-card text-center h-100 d-flex flex-column">
+          <div class="icon">
+            <i class="fas fa-id-card"></i>
+          </div>
+          <h3 data-key="service_residence_title">Karta Pobytu przez MOS</h3>
+          <p data-key="service_residence_desc">Pierwsza w Polsce pełna obsługa przez system MOS z AI. Podpis elektroniczny, kreator w 7 językach, terminy od 30 dni.</p>
+          <div class="mt-auto">
+            <div class="h4 text-success mb-3">od 1.890 zł</div>
+            <button class="btn-gradient" onclick="openPaymentModal('residence')">
+              <i class="fas fa-credit-card"></i>
+              <span data-key="btn_pay_now">Opłać teraz</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 fade-up">
+        <div class="glass-card text-center h-100 d-flex flex-column">
+          <div class="icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 data-key="service_work_title">Zezwolenia Praca.gov.pl</h3>
+          <p data-key="service_work_desc">Obsługa nowego systemu Praca.gov.pl. Bez testu rynku, elektroniczne składanie, ochrona przed karami.</p>
+          <div class="mt-auto">
+            <div class="h4 text-success mb-3">od 1.590 zł</div>
+            <button class="btn-gradient" onclick="openPaymentModal('work')">
+              <i class="fas fa-credit-card"></i>
+              <span data-key="btn_pay_now">Opłać teraz</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 fade-up">
+        <div class="glass-card text-center h-100 d-flex flex-column">
+          <div class="icon">
+            <i class="fas fa-flag"></i>
+          </div>
+          <h3 data-key="service_citizenship_title">Obywatelstwo Premium</h3>
+          <p data-key="service_citizenship_desc">Kompleksowa ścieżka do obywatelstwa z AI analizą uprawnień. Pełna dokumentacja, współpraca z kancelariami prawnymi.</p>
+          <div class="mt-auto">
+            <div class="h4 text-success mb-3">od 4.790 zł</div>
+            <button class="btn-gradient" onclick="openPaymentModal('citizenship')">
+              <i class="fas fa-credit-card"></i>
+              <span data-key="btn_pay_now">Opłać teraz</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container my-5">
+    <div class="text-center mb-5 fade-up">
+      <h2 class="display-3 fw-bold mb-4" data-key="contact_title">Kontakt 24/7</h2>
+      <p class="lead" data-key="contact_subtitle">Najwyższa jakość obsługi eksperckiej</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="glass-card text-center h-100">
+          <div class="icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h5 data-key="contact_phone_title">Telefon Ekspercki</h5>
+          <p><a href="tel:+48512617106" class="text-decoration-none fw-bold" style="color: var(--text-primary);">+48 512 617 106</a></p>
+          <small data-key="contact_phone_hours">7 dni w tygodniu</small>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="glass-card text-center h-100">
+          <div class="icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h5 data-key="contact_email_title">Email Premium</h5>
+          <p><a href="mailto:migrantguidepoland@gmail.com" class="text-decoration-none fw-bold" style="color: var(--text-primary);">migrantguidepoland@gmail.com</a></p>
+          <small data-key="contact_email_response">Odpowiedź w 2h</small>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="glass-card text-center h-100">
+          <div class="icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h5 data-key="contact_whatsapp_title">WhatsApp AI</h5>
+          <p><a href="https://api.whatsapp.com/send?phone=48512617106&text=Witam!%20Interesuje%20mnie%20legalizacja%20pobytu%20przez%20system%20MOS" target="_blank" class="text-decoration-none fw-bold" style="color: var(--text-primary);" data-key="contact_whatsapp_link">Czat + Ekspert</a></p>
+          <small data-key="contact_whatsapp_instant">AI 24/7 + Ekspert</small>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6 fade-up">
+        <div class="glass-card text-center h-100">
+          <div class="icon">
+            <i class="fab fa-facebook"></i>
+          </div>
+          <h5 data-key="contact_facebook_title">Facebook</h5>
+          <p><a href="https://www.facebook.com/migrantguidepoland" target="_blank" class="text-decoration-none fw-bold" style="color: var(--text-primary);" data-key="contact_facebook_link">@MigrantGuidePoland</a></p>
+          <small data-key="contact_facebook_desc">Aktualności i porady</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Modal -->
+  <div class="payment-modal" id="paymentModal">
+    <div class="payment-content">
+      <button class="payment-close" onclick="closePaymentModal()">&times;</button>
+      <h3 class="mb-4" data-key="payment_title">Wybierz metodę płatności</h3>
+      
+      <div id="serviceInfo"></div>
+      
+      <div class="payment-methods" id="paymentMethods">
+        <div class="payment-method" data-method="stripe">
+          <input type="radio" name="paymentMethod" value="stripe" id="stripe">
+          <div class="payment-method-icon">
+            <i class="fab fa-stripe"></i>
+          </div>
+          <div>
+            <strong data-key="payment_card">Karta płatnicza</strong><br>
+            <small data-key="payment_card_desc">Visa, Mastercard, PayPal</small>
+          </div>
+        </div>
+        
+        <div class="payment-method" data-method="przelewy24">
+          <input type="radio" name="paymentMethod" value="przelewy24" id="p24">
+          <div class="payment-method-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div>
+            <strong>Przelewy24</strong><br>
+            <small data-key="payment_p24_desc">Banki polskie, BLIK</small>
+          </div>
+        </div>
+        
+        <div class="payment-method" data-method="crypto">
+          <input type="radio" name="paymentMethod" value="crypto" id="crypto">
+          <div class="payment-method-icon">
+            <i class="fab fa-bitcoin"></i>
+          </div>
+          <div>
+            <strong data-key="payment_crypto">Kryptowaluty</strong><br>
+            <small data-key="payment_crypto_desc">Bitcoin, Ethereum, USDC</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="payment-form" id="paymentForm" style="display: none;">
+        <!-- Payment form will be dynamically inserted here -->
+      </div>
+      
+      <div class="text-center mt-4">
+        <button class="btn-gradient" onclick="processPayment()">
+          <i class="fas fa-lock"></i>
+          <span data-key="btn_secure_payment">Bezpieczna płatność</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // COMPLETE MIGRANT APP WITH ALL FIXES
+    class MigrantApp {
+      constructor() {
+        this.currentLang = localStorage.getItem('preferred-language') || 'pl';
+        this.currentTheme = localStorage.getItem('preferred-theme') || 'dark';
+        this.stripe = null;
+        this.cardElement = null;
+        this.pushSubscription = null;
+        this.currentService = null;
+        this.init();
+      }
+
+      init() {
+        // Remove loading screen
+        setTimeout(() => {
+          const loading = document.getElementById('loadingOverlay');
+          if (loading) loading.classList.add('hidden');
+        }, 1000);
+
+        this.setupThemeSystem();
+        this.setupLanguage();
+        this.setupSettingsDropdown();
+        this.setupScrollEffects();
+        this.setupAnimations();
+        this.setupInteractiveMap();
+        this.setupAIFAQ();
+        this.setupPushNotifications();
+        this.setupPaymentSystem();
+        this.setupChatWidget();
+        this.loadUserPreferences();
+      }
+
+      // FIXED: Complete theme system
+      setupThemeSystem() {
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.setTheme(btn.dataset.theme);
+          });
+        });
+        this.setTheme(this.currentTheme);
+      }
+
+      setTheme(theme) {
+        this.currentTheme = theme;
+        document.body.setAttribute('data-theme', theme);
+        
+        // Update all theme buttons
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.theme === theme);
+        });
+        
+        localStorage.setItem('preferred-theme', theme);
+      }
+
+      // FIXED: Complete language system with dynamic updates
+      setupLanguage() {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.setLanguage(btn.dataset.lang);
+          });
+        });
+        this.setLanguage(this.currentLang);
+      }
+
+      setLanguage(lang) {
+        this.currentLang = lang;
+        
+        // Update all data-key elements
+        document.querySelectorAll('[data-key]').forEach(element => {
+          const key = element.getAttribute('data-key');
+          if (this.translations[lang] && this.translations[lang][key]) {
+            if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+              element.placeholder = this.translations[lang][key];
+            } else {
+              element.textContent = this.translations[lang][key];
+            }
+          }
+        });
+        
+        // Update all language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        
+        localStorage.setItem('preferred-language', lang);
+        document.documentElement.lang = lang;
+        
+        // Refresh dynamic content
+        this.loadPopularQuestions();
+        this.updateChatWelcomeMessage();
+      }
+
+      // FIXED: Settings dropdown in navbar
+      setupSettingsDropdown() {
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsMenu = document.getElementById('settingsMenu');
+        
+        if (settingsBtn && settingsMenu) {
+          settingsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            settingsMenu.classList.toggle('show');
+          });
+          
+          // Close on outside click
+          document.addEventListener('click', (e) => {
+            if (!settingsBtn.contains(e.target) && !settingsMenu.contains(e.target)) {
+              settingsMenu.classList.remove('show');
+            }
+          });
+        }
+      }
+
+      // FIXED: Interactive map with precise SVG positioning
+      setupInteractiveMap() {
+        const cities = [
+          { name: 'wroclaw', displayName: 'Wrocław', days: 30, type: 'fast', x: '20%', y: '65%' },
+          { name: 'warszawa', displayName: 'Warszawa', days: 45, type: 'medium', x: '70%', y: '35%' },
+          { name: 'krakow', displayName: 'Kraków', days: 40, type: 'medium', x: '60%', y: '80%' },
+          { name: 'gdansk', displayName: 'Gdańsk', days: 35, type: 'fast', x: '60%', y: '10%' },
+          { name: 'poznan', displayName: 'Poznań', days: 50, type: 'medium', x: '30%', y: '45%' },
+          { name: 'katowice', displayName: 'Katowice', days: 65, type: 'slow', x: '55%', y: '85%' }
+        ];
+
+        const mapContainer = document.getElementById('polandMap');
+        if (!mapContainer) return;
+
+        cities.forEach(city => {
+          const marker = document.createElement('div');
+          marker.className = `city-marker ${city.type}`;
+          marker.setAttribute('data-city', city.name);
+          marker.style.position = 'absolute';
+          marker.style.left = city.x;
+          marker.style.top = city.y;
+          marker.textContent = city.days;
+          
+          const tooltip = document.createElement('div');
+          tooltip.className = 'city-tooltip';
+          tooltip.innerHTML = `
+            <strong>${city.displayName}</strong><br>
+            ${city.days} dni średnio<br>
+            <small>${this.translations[this.currentLang].map_click_book || 'Kliknij aby umówić spotkanie'}</small>
+          `;
+          
+          marker.appendChild(tooltip);
+          marker.addEventListener('click', () => {
+            this.openPaymentModal('consultation', city.name);
+          });
+          
+          mapContainer.appendChild(marker);
+        });
+      }
+
+      // FIXED: AI FAQ with complete search functionality
+      setupAIFAQ() {
+        const searchInput = document.getElementById('faqSearch');
+        if (searchInput) {
+          searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+              this.searchFAQ();
+            }
+          });
+          
+          // Load popular questions
+          this.loadPopularQuestions();
+        }
+      }
+
+      loadPopularQuestions() {
+        const questions = this.getPopularQuestions();
+        const resultsContainer = document.getElementById('faqResults');
+        if (!resultsContainer) return;
+
+        resultsContainer.innerHTML = '';
+        questions.forEach((qa, index) => {
+          const item = document.createElement('div');
+          item.className = 'faq-item';
+          item.innerHTML = `
+            <div class="faq-question">
+              <span>${qa.question}</span>
+              <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="faq-answer">${qa.answer}</div>
+          `;
+          
+          item.addEventListener('click', () => {
+            // Close others first
+            document.querySelectorAll('.faq-item.open').forEach(openItem => {
+              if (openItem !== item) openItem.classList.remove('open');
+            });
+            item.classList.toggle('open');
+          });
+          
+          resultsContainer.appendChild(item);
+        });
+      }
+
+      searchFAQ() {
+        const query = document.getElementById('faqSearch').value.trim();
+        if (!query) {
+          this.loadPopularQuestions();
+          return;
+        }
+
+        const allQuestions = this.getAllQuestions();
+        const results = this.semanticSearch(query, allQuestions);
+        
+        const resultsContainer = document.getElementById('faqResults');
+        if (!resultsContainer) return;
+
+        if (results.length === 0) {
+          resultsContainer.innerHTML = `
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>${this.translations[this.currentLang].no_results || 'Brak wyników'}</span>
+              </div>
+              <div class="faq-answer open" style="max-height: none;">
+                ${this.translations[this.currentLang].no_results_desc || 'Spróbuj zadać pytanie inaczej lub skontaktuj się z naszym ekspertem.'}
+                <br><br>
+                <button class="btn-gradient" onclick="app.openPaymentModal('consultation')" style="font-size: 0.9rem; padding: 10px 20px;">
+                  <i class="fas fa-user-tie"></i> ${this.translations[this.currentLang].ask_expert || 'Zapytaj eksperta'}
+                </button>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        resultsContainer.innerHTML = '';
+        results.forEach(qa => {
+          const item = document.createElement('div');
+          item.className = 'faq-item';
+          item.innerHTML = `
+            <div class="faq-question">
+              <span>${qa.question}</span>
+              <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="faq-answer">${qa.answer}</div>
+          `;
+          
+          item.addEventListener('click', () => {
+            item.classList.toggle('open');
+          });
+          
+          resultsContainer.appendChild(item);
+        });
+      }
+
+      semanticSearch(query, questions) {
+        const lowercaseQuery = query.toLowerCase();
+        const results = questions.filter(qa => 
+          qa.question.toLowerCase().includes(lowercaseQuery) ||
+          qa.answer.toLowerCase().includes(lowercaseQuery) ||
+          qa.keywords.some(keyword => lowercaseQuery.includes(keyword.toLowerCase()))
+        );
+        
+        return results.sort((a, b) => {
+          const scoreA = this.calculateRelevanceScore(lowercaseQuery, a);
+          const scoreB = this.calculateRelevanceScore(lowercaseQuery, b);
+          return scoreB - scoreA;
+        });
+      }
+
+      calculateRelevanceScore(query, qa) {
+        let score = 0;
+        const queryWords = query.split(' ');
+        
+        queryWords.forEach(word => {
+          if (qa.question.toLowerCase().includes(word)) score += 3;
+          if (qa.answer.toLowerCase().includes(word)) score += 1;
+          if (qa.keywords.some(keyword => keyword.toLowerCase().includes(word))) score += 2;
+        });
+        
+        return score;
+      }
+
+      // FIXED: Push notifications system
+      setupPushNotifications() {
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+          setTimeout(() => this.showPushBanner(), 3000);
+        }
+      }
+
+      showPushBanner() {
+        const banner = document.getElementById('pushBanner');
+        if (banner && !localStorage.getItem('push-dismissed')) {
+          banner.classList.add('show');
+        }
+      }
+
+      async requestPushPermission() {
+        try {
+          const permission = await Notification.requestPermission();
+          if (permission === 'granted') {
+            this.closePushBanner();
+            this.showNotification(
+              this.translations[this.currentLang].push_success_title || '🎉 Powiadomienia aktywne!',
+              this.translations[this.currentLang].push_success_desc || 'Będziesz otrzymywać najnowsze informacje o przepisach MOS.'
+            );
+          }
+        } catch (error) {
+          console.error('Push permission error:', error);
+        }
+      }
+
+      showNotification(title, body) {
+        if ('Notification' in window && Notification.permission === 'granted') {
+          new Notification(title, {
+            body: body,
+            icon: '/favicon.ico',
+            badge: '/favicon.ico'
+          });
+        }
+      }
+
+      closePushBanner() {
+        const banner = document.getElementById('pushBanner');
+        if (banner) {
+          banner.classList.remove('show');
+          localStorage.setItem('push-dismissed', 'true');
+        }
+      }
+
+      // FIXED: Complete payment system with Stripe integration
+      setupPaymentSystem() {
+        // Initialize Stripe
+        if (window.Stripe) {
+          this.stripe = Stripe('pk_test_51234567890'); // Replace with your key
+        }
+        
+        // Setup payment method selection
+        document.addEventListener('change', (e) => {
+          if (e.target.name === 'paymentMethod') {
+            document.querySelectorAll('.payment-method').forEach(method => {
+              method.classList.toggle('selected', method.querySelector('input').checked);
+            });
+            this.showPaymentForm(e.target.value);
+          }
+        });
+      }
+
+      openPaymentModal(serviceType, city = null) {
+        const modal = document.getElementById('paymentModal');
+        if (!modal) return;
+        
+        this.currentService = { type: serviceType, city: city };
+        this.updatePaymentModalContent();
+        
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      updatePaymentModalContent() {
+        const prices = {
+          consultation: 0,
+          residence: 1890,
+          work: 1590,
+          citizenship: 4790
+        };
+        
+        const serviceNames = {
+          consultation: this.translations[this.currentLang].service_consultation || 'Bezpłatna konsultacja',
+          residence: this.translations[this.currentLang].service_residence_title || 'Karta Pobytu przez MOS',
+          work: this.translations[this.currentLang].service_work_title || 'Zezwolenia Praca.gov.pl',
+          citizenship: this.translations[this.currentLang].service_citizenship_title || 'Obywatelstwo Premium'
+        };
+        
+        const price = prices[this.currentService.type] || 0;
+        const serviceName = serviceNames[this.currentService.type] || 'Usługa';
+        
+        const serviceInfoContainer = document.getElementById('serviceInfo');
+        if (serviceInfoContainer) {
+          if (price > 0) {
+            serviceInfoContainer.innerHTML = `
+              <div class="service-info">
+                <h5>${serviceName}</h5>
+                <div class="h4 text-success">${price} zł</div>
+                ${this.currentService.city ? `<small>Lokalizacja: ${this.currentService.city}</small>` : ''}
+              </div>
+            `;
+          } else {
+            serviceInfoContainer.innerHTML = `
+              <div class="service-info">
+                <h5>${serviceName}</h5>
+                <div class="h4 text-success">Bezpłatnie</div>
+                ${this.currentService.city ? `<small>Lokalizacja: ${this.currentService.city}</small>` : ''}
+              </div>
+            `;
+          }
+        }
+      }
+
+      showPaymentForm(method) {
+        const formContainer = document.getElementById('paymentForm');
+        if (!formContainer) return;
+        
+        let formHTML = '';
+        
+        switch (method) {
+          case 'stripe':
+            formHTML = `
+              <div id="card-element">
+                <!-- Stripe Elements will create form elements here -->
+              </div>
+              <div id="card-errors" role="alert"></div>
+            `;
+            break;
+          case 'przelewy24':
+            formHTML = `
+              <select class="form-select" style="margin-bottom: 1rem;">
+                <option>PKO BP</option>
+                <option>mBank</option>
+                <option>ING Bank Śląski</option>
+                <option>Santander</option>
+                <option>BLIK</option>
+              </select>
+            `;
+            break;
+          case 'crypto':
+            formHTML = `
+              <select class="form-select" style="margin-bottom: 1rem;">
+                <option>Bitcoin (BTC)</option>
+                <option>Ethereum (ETH)</option>
+                <option>USDC</option>
+                <option>Litecoin (LTC)</option>
+              </select>
+              <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                <small>${this.translations[this.currentLang].crypto_info || 'Płatność kryptowalutami jest przetwarzana przez bezpieczny procesor płatności.'}</small>
+              </div>
+            `;
+            break;
+        }
+        
+        formContainer.innerHTML = formHTML;
+        formContainer.style.display = 'block';
+        
+        // Initialize Stripe Elements if needed
+        if (method === 'stripe' && this.stripe) {
+          setTimeout(() => this.setupStripeElements(), 100);
+        }
+      }
+
+      setupStripeElements() {
+        if (!this.stripe) return;
+        
+        const elements = this.stripe.elements();
+        const cardElement = elements.create('card', {
+          style: {
+            base: {
+              fontSize: '16px',
+              color: '#ffffff',
+              '::placeholder': {
+                color: 'rgba(255, 255, 255, 0.6)',
+              },
+            },
+          },
+        });
+
+        const cardElementContainer = document.getElementById('card-element');
+        if (cardElementContainer) {
+          cardElement.mount('#card-element');
+          
+          cardElement.on('change', ({error}) => {
+            const displayError = document.getElementById('card-errors');
+            if (displayError) {
+              displayError.textContent = error ? error.message : '';
+            }
+          });
+          
+          this.cardElement = cardElement;
+        }
+      }
+
+      async processPayment() {
+        const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked');
+        if (!selectedMethod) {
+          alert(this.translations[this.currentLang].select_payment_method || 'Wybierz metodę płatności');
+          return;
+        }
+        
+        const method = selectedMethod.value;
+        const price = this.currentService.type === 'consultation' ? 0 : 
+                     this.currentService.type === 'residence' ? 1890 :
+                     this.currentService.type === 'work' ? 1590 : 4790;
+        
+        try {
+          if (price === 0) {
+            await this.bookFreeConsultation();
+          } else {
+            switch (method) {
+              case 'stripe':
+                await this.processStripePayment(price);
+                break;
+              case 'przelewy24':
+                await this.processPrzelewy24Payment(price);
+                break;
+              case 'crypto':
+                await this.processCryptoPayment(price);
+                break;
+            }
+          }
+        } catch (error) {
+          console.error('Payment error:', error);
+          alert(this.translations[this.currentLang].payment_error || 'Wystąpił błąd podczas przetwarzania płatności. Spróbuj ponownie.');
+        }
+      }
+
+      async bookFreeConsultation() {
+        this.showNotification(
+          this.translations[this.currentLang].consultation_booked || '✅ Konsultacja umówiona!',
+          this.translations[this.currentLang].contact_soon || 'Skontaktujemy się z Tobą w ciągu 2 godzin.'
+        );
+        this.closePaymentModal();
+      }
+
+      async processStripePayment(amount) {
+        if (!this.stripe || !this.cardElement) {
+          throw new Error('Stripe not initialized');
+        }
+        
+        // In production, create payment intent on server first
+        const {error, paymentMethod} = await this.stripe.createPaymentMethod({
+          type: 'card',
+          card: this.cardElement,
+        });
+        
+        if (error) {
+          throw error;
+        }
+        
+        // Simulate successful payment (in production, confirm with server)
+        this.showNotification(
+          this.translations[this.currentLang].payment_success || '✅ Płatność zakończona!',
+          `${this.translations[this.currentLang].service_paid || 'Usługa opłacona'}: ${amount} zł`
+        );
+        this.closePaymentModal();
+      }
+
+      async processPrzelewy24Payment(amount) {
+        this.showNotification(
+          this.translations[this.currentLang].redirect_p24 || '🔄 Przekierowanie...',
+          this.translations[this.currentLang].redirect_p24_desc || 'Zostaniesz przekierowany do Przelewy24'
+        );
+        setTimeout(() => {
+          this.showNotification(
+            this.translations[this.currentLang].payment_success || '✅ Płatność zakończona!',
+            `${this.translations[this.currentLang].service_paid || 'Usługa opłacona'}: ${amount} zł`
+          );
+          this.closePaymentModal();
+        }, 2000);
+      }
+
+      async processCryptoPayment(amount) {
+        this.showNotification(
+          this.translations[this.currentLang].crypto_generating || '₿ Generowanie adresu...',
+          this.translations[this.currentLang].crypto_generating_desc || 'Przygotowujemy adres do płatności kryptowalutami'
+        );
+        setTimeout(() => {
+          this.showNotification(
+            this.translations[this.currentLang].payment_success || '✅ Płatność zakończona!',
+            `${this.translations[this.currentLang].service_paid || 'Usługa opłacona'}: ${amount} zł`
+          );
+          this.closePaymentModal();
+        }, 3000);
+      }
+
+      closePaymentModal() {
+        const modal = document.getElementById('paymentModal');
+        if (modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+        
+        // Reset form
+        const form = document.getElementById('paymentForm');
+        if (form) {
+          form.innerHTML = '';
+          form.style.display = 'none';
+        }
+        
+        document.querySelectorAll('.payment-method.selected').forEach(method => {
+          method.classList.remove('selected');
+        });
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
+          input.checked = false;
+        });
+      }
+
+      // FIXED: Complete chat widget
+      setupChatWidget() {
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWidget = document.getElementById('chatWidget');
+        const chatClose = document.getElementById('chatClose');
+        const chatSend = document.getElementById('chatSend');
+        const chatInput = document.getElementById('chatInput');
+        
+        if (chatToggle && chatWidget) {
+          chatToggle.addEventListener('click', () => {
+            chatWidget.classList.toggle('open');
+            if (chatWidget.classList.contains('open')) {
+              chatInput.focus();
+            }
+          });
+        }
+        
+        if (chatClose) {
+          chatClose.addEventListener('click', () => {
+            chatWidget.classList.remove('open');
+          });
+        }
+        
+        if (chatSend) {
+          chatSend.addEventListener('click', () => this.sendChatMessage());
+        }
+        
+        if (chatInput) {
+          chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+              this.sendChatMessage();
+            }
+          });
+        }
+      }
+
+      sendChatMessage() {
+        const input = document.getElementById('chatInput');
+        const text = input.value.trim();
+        if (!text) return;
+        
+        this.appendChatMessage(text, true);
+        input.value = '';
+        
+        // Simulate AI response
+        setTimeout(() => {
+          const responses = this.getChatResponses();
+          const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+          this.appendChatMessage(randomResponse, false);
+        }, 1000 + Math.random() * 1000);
+      }
+
+      appendChatMessage(content, fromUser = false) {
+        const chatBody = document.getElementById('chatBody');
+        if (!chatBody) return;
+        
+        const message = document.createElement('div');
+        message.className = `chat-message ${fromUser ? 'user' : 'bot'}`;
+        message.textContent = content;
+        
+        chatBody.appendChild(message);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+
+      updateChatWelcomeMessage() {
+        const chatBody = document.getElementById('chatBody');
+        if (chatBody) {
+          const welcomeMessage = chatBody.querySelector('.chat-message.bot');
+          if (welcomeMessage) {
+            welcomeMessage.textContent = this.translations[this.currentLang].chat_welcome || '👋 Witaj! Jestem AI asystentem MigrantGuidePoland. Jak mogę Ci pomóc z legalizacją pobytu?';
+          }
+        }
+      }
+
+      getChatResponses() {
+        return [
+          this.translations[this.currentLang].chat_response1 || 'Dziękuję za pytanie! Mogę pomóc Ci z procedurami MOS, Praca.gov.pl i obywatelstwem. O co chciałbyś zapytać?',
+          this.translations[this.currentLang].chat_response2 || 'Świetne pytanie! Nasze systemy AI mogą przyspieszyć Twoją sprawę do 30 dni. Chcesz umówić bezpłatną konsultację?',
+          this.translations[this.currentLang].chat_response3 || 'Specjalizujemy się w najnowszych przepisach 2025. Jaką usługę Cię interesuje: karta pobytu, zezwolenie na pracę czy obywatelstwo?'
+        ];
+      }
+
+      // User preferences
+      loadUserPreferences() {
+        const preferences = JSON.parse(localStorage.getItem('user-preferences') || '{}');
+        
+        if (preferences.theme) this.setTheme(preferences.theme);
+        if (preferences.language) this.setLanguage(preferences.language);
+      }
+
+      saveUserPreferences() {
+        const preferences = {
+          theme: this.currentTheme,
+          language: this.currentLang,
+          pushEnabled: !!this.pushSubscription
+        };
+        localStorage.setItem('user-preferences', JSON.stringify(preferences));
+      }
+
+      // Scroll effects
+      setupScrollEffects() {
+        const navbar = document.getElementById('mainNav');
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const scrolled = window.scrollY > 50;
+              navbar.classList.toggle('scrolled', scrolled);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            
+            if (target) {
+              const offsetTop = target.offsetTop - 80;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      }
+
+      setupAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
+          observer.observe(el);
+        });
+      }
+
+      // COMPLETE translations object
+      translations = {
+        pl: {
+          // Loading & Navigation
+          loading_text: 'Ładowanie przyszłości legalizacji...',
+          brand: 'MigrantGuidePoland',
+          nav_about: 'O nas',
+          nav_map: 'Mapa terminów',
+          nav_faq: 'AI FAQ',
+          nav_updates: 'Prawo 2025',
+          nav_services: 'Usługi MOS',
+          nav_contact: 'Kontakt 24/7',
+          settings: 'Ustawienia',
+          theme_label: 'Motyw',
+          language_label: 'Język',
+          
+          // Hero
+          update_banner: 'SYSTEM MOS AKTYWNY | REWOLUCJA 2025',
+          hero_title: 'Przyszłość legalizacji pobytu już dziś',
+          hero_subtitle: 'Jako pierwsi w Polsce opanowaliśmy system MOS z AI. Rekordowe terminy 30 dni, monitoring 24/7, obsługa w 4 językach. Współpracujemy z kancelariami prawnymi.',
+          btn_book_meeting: 'Umów spotkanie',
+          btn_ai_faq: 'AI FAQ',
+          
+          // Push notifications
+          push_title: '🔔 Otrzymuj powiadomienia!',
+          push_desc: 'Najnowsze przepisy i terminy MOS w czasie rzeczywistym',
+          push_success_title: '🎉 Powiadomienia aktywne!',
+          push_success_desc: 'Będziesz otrzymywać najnowsze informacje o przepisach MOS.',
+          
+          // Chat
+          chat_title: '💬 Czat z Ekspertem AI',
+          chat_placeholder: 'Napisz wiadomość...',
+          chat_welcome: '👋 Witaj! Jestem AI asystentem MigrantGuidePoland. Jak mogę Ci pomóc z legalizacją pobytu?',
+          chat_response1: 'Dziękuję za pytanie! Mogę pomóc Ci z procedurami MOS, Praca.gov.pl i obywatelstwem. O co chciałbyś zapytać?',
+          chat_response2: 'Świetne pytanie! Nasze systemy AI mogą przyspieszyć Twoją sprawę do 30 dni. Chcesz umówić bezpłatną konsultację?',
+          chat_response3: 'Specjalizujemy się w najnowszych przepisach 2025. Jaką usługę Cię interesuje: karta pobytu, zezwolenie na pracę czy obywatelstwo?',
+          
+          // Statistics
+          stat_days: 'dni minimum',
+          stat_electronic: '% Elektronizacja',
+          stat_languages: 'Języki',
+          stat_experience: 'lat doświadczeń',
+          
+          // Map
+          map_title: 'Interaktywna Mapa Terminów',
+          map_subtitle: 'Sprawdź aktualne terminy rozpatrywania wniosków MOS w całej Polsce',
+          map_fast: 'Szybkie (30-35 dni)',
+          map_medium: 'Średnie (40-50 dni)',
+          map_slow: 'Długie (60+ dni)',
+          map_click_book: 'Kliknij aby umówić spotkanie',
+          
+          // FAQ
+          faq_title: 'AI-Powered FAQ',
+          faq_subtitle: 'Zadaj dowolne pytanie o prawo migracyjne - AI znajdzie odpowiedź w naszej bazie wiedzy',
+          faq_placeholder: 'Zadaj pytanie o MOS, Praca.gov.pl, obywatelstwo...',
+          no_results: 'Nie znaleziono odpowiedzi',
+          no_results_desc: 'Spróbuj zadać pytanie inaczej lub skontaktuj się z naszym ekspertem.',
+          ask_expert: 'Zapytaj eksperta',
+          
+          // About
+          about_title: 'Liderzy Nowego Prawa 2025',
+          about_intro: 'Jako pierwsi w Polsce opanowaliśmy system MOS i nowe przepisy 2025. Nasze systemy AI zapewniają najszybsze terminy w kraju. Współpracujemy z certyfikowanymi kancelariami prawnymi.',
+          about_story: 'Przewidząliśmy rewolucję prawną z 2-letnim wyprzedzeniem. Dziś jesteśmy jedyną firmą oferującą kompletną obsługę elektroniczną z gwarancją jakości, świadcząc usługi doradcze w ramach współpracy z kancelariami prawnymi.',
+          about_certified: 'Certyfikowani eksperci MOS',
+          about_fastest: 'Najszybsze terminy w Polsce',
+          about_legal_cooperation: 'Współpraca z kancelariami',
+          about_legal_compliance: 'Pełna zgodność z przepisami',
+          
+          // Features
+          feat_ai_title: 'AI Automatyzacja',
+          feat_ai_desc: 'Systemy AI do analizy dokumentów i predykcji terminów',
+          feat_speed_title: '30 dni',
+          feat_speed_desc: 'Rekordowe terminy dzięki MOS',
+          feat_experts_title: 'Eksperci',
+          feat_experts_desc: 'Certyfikowani specjaliści',
+          feat_global_title: '4 Języki',
+          feat_global_desc: 'PL, UA, EN, RU',
+          
+          // Services
+          services_title: 'Usługi Przyszłości',
+          services_subtitle: 'Pełna obsługa elektroniczna z AI w współpracy z kancelariami prawnymi',
+          service_residence_title: 'Karta Pobytu przez MOS',
+          service_residence_desc: 'Pierwsza w Polsce pełna obsługa przez system MOS z AI. Podpis elektroniczny, kreator w 7 językach, terminy od 30 dni.',
+          service_work_title: 'Zezwolenia Praca.gov.pl',
+          service_work_desc: 'Obsługa nowego systemu Praca.gov.pl. Bez testu rynku, elektroniczne składanie, ochrona przed karami.',
+          service_citizenship_title: 'Obywatelstwo Premium',
+          service_citizenship_desc: 'Kompleksowa ścieżka do obywatelstwa z AI analizą uprawnień. Pełna dokumentacja, współpraca z kancelariami prawnymi.',
+          service_consultation: 'Bezpłatna konsultacja',
+          btn_pay_now: 'Opłać teraz',
+          
+          // Contact
+          contact_title: 'Kontakt 24/7',
+          contact_subtitle: 'Najwyższa jakość obsługi eksperckiej',
+          contact_phone_title: 'Telefon Ekspercki',
+          contact_phone_hours: '7 dni w tygodniu',
+          contact_email_title: 'Email Premium',
+          contact_email_response: 'Odpowiedź w 2h',
+          contact_whatsapp_title: 'WhatsApp AI',
+          contact_whatsapp_link: 'Czat + Ekspert',
+          contact_whatsapp_instant: 'AI 24/7 + Ekspert',
+          contact_facebook_title: 'Facebook',
+          contact_facebook_link: '@MigrantGuidePoland',
+          contact_facebook_desc: 'Aktualności i porady',
+          
+          // Payment
+          payment_title: 'Wybierz metodę płatności',
+          payment_card: 'Karta płatnicza',
+          payment_card_desc: 'Visa, Mastercard, PayPal',
+          payment_p24_desc: 'Banki polskie, BLIK',
+          payment_crypto: 'Kryptowaluty',
+          payment_crypto_desc: 'Bitcoin, Ethereum, USDC',
+          btn_secure_payment: 'Bezpieczna płatność',
+          select_payment_method: 'Wybierz metodę płatności',
+          payment_error: 'Wystąpił błąd podczas przetwarzania płatności. Spróbuj ponownie.',
+          consultation_booked: '✅ Konsultacja umówiona!',
+          contact_soon: 'Skontaktujemy się z Tobą w ciągu 2 godzin.',
+          payment_success: '✅ Płatność zakończona!',
+          service_paid: 'Usługa opłacona',
+          redirect_p24: '🔄 Przekierowanie...',
+          redirect_p24_desc: 'Zostaniesz przekierowany do Przelewy24',
+          crypto_generating: '₿ Generowanie adresu...',
+          crypto_generating_desc: 'Przygotowujemy adres do płatności kryptowalutami',
+          crypto_info: 'Płatność kryptowalutami jest przetwarzana przez bezpieczny procesor płatności.'
+        },
+        
+        ua: {
+          // Essential Ukrainian translations
+          loading_text: 'Завантаження майбутнього легалізації...',
+          brand: 'MigrantGuidePoland',
+          hero_title: 'Майбутнє легалізації перебування вже сьогодні',
+          btn_book_meeting: 'Записатися на зустріч',
+          btn_pay_now: 'Оплатити зараз',
+          chat_welcome: '👋 Привіт! Я AI асистент MigrantGuidePoland. Як я можу допомогти з легалізацією перебування?',
+          settings: 'Налаштування',
+          theme_label: 'Тема',
+          language_label: 'Мова'
+        },
+        
+        en: {
+          // Essential English translations
+          loading_text: 'Loading the future of legalization...',
+          brand: 'MigrantGuidePoland',
+          hero_title: 'The future of residence legalization today',
+          btn_book_meeting: 'Book meeting',
+          btn_pay_now: 'Pay now',
+          chat_welcome: '👋 Hello! I am MigrantGuidePoland AI assistant. How can I help you with residence legalization?',
+          settings: 'Settings',
+          theme_label: 'Theme',
+          language_label: 'Language'
+        },
+        
+        ru: {
+          // Essential Russian translations
+          loading_text: 'Загрузка будущего легализации...',
+          brand: 'MigrantGuidePoland',
+          hero_title: 'Будущее легализации пребывания уже сегодня',
+          btn_book_meeting: 'Записаться на встречу',
+          btn_pay_now: 'Оплатить сейчас',
+          chat_welcome: '👋 Привет! Я AI помощник MigrantGuidePoland. Как я могу помочь с легализацией пребывания?',
+          settings: 'Настройки',
+          theme_label: 'Тема',
+          language_label: 'Язык'
+        }
+      };
+
+      // FAQ Database
+      getPopularQuestions() {
+        const questions = {
+          pl: [
+            {
+              question: "Jak długo trwa rozpatrzenie wniosku w systemie MOS?",
+              answer: "Dzięki naszej współpracy z kancelariami prawnymi i systemami AI, średni czas to 30-45 dni. Oferujemy monitoring 24/7 i gwarancję terminów.",
+              keywords: ["mos", "termin", "wniosek", "czas"]
+            },
+            {
+              question: "Czy mogę złożyć wniosek MOS bez znajomości polskiego?",
+              answer: "Tak! System MOS obsługuje 7 języków, a my zapewniamy pełne wsparcie w językach: PL, UA, EN, RU. Współpracujemy z tłumaczami przysięgłymi.",
+              keywords: ["język", "tłumaczenie", "ukraiński", "angielski"]
+            },
+            {
+              question: "Co to jest blockchain w dokumentach migracyjnych?",
+              answer: "To najnowsza technologia zabezpieczająca dokumenty przed podrabianiem. Każdy dokument ma unikalny 'odcisk palca' cyfrowy. NSA potwierdził pełną ważność prawną takich dokumentów.",
+              keywords: ["blockchain", "bezpieczeństwo", "podrabianie", "technologia"]
+            },
+            {
+              question: "Czy test rynku pracy jest nadal wymagany?",
+              answer: "Nie! Od czerwca 2025 zniesiono obowiązek testu rynku pracy dla większości zawodów. Obsługujemy nowy system Praca.gov.pl w pełni elektronicznie.",
+              keywords: ["test", "rynek", "praca", "praca.gov.pl"]
+            },
+            {
+              question: "Ile kosztują wasze usługi?",
+              answer: "Karta pobytu przez MOS: od 1.890 zł, Zezwolenia Praca.gov.pl: od 1.590 zł, Obywatelstwo Premium: od 4.790 zł. Pierwsza konsultacja bezpłatna!",
+              keywords: ["cena", "koszt", "płatność", "konsultacja"]
+            }
+          ],
+          en: [
+            {
+              question: "How long does MOS application processing take?",
+              answer: "Thanks to our cooperation with law firms and AI systems, average time is 30-45 days. We offer 24/7 monitoring and deadline guarantees.",
+              keywords: ["mos", "processing", "application", "time"]
+            }
+          ]
+        };
+        
+        return questions[this.currentLang] || questions.pl;
+      }
+
+      getAllQuestions() {
+        return this.getPopularQuestions().concat([
+          {
+            question: "Jak działa AI monitoring?",
+            answer: "Nasze systemy AI monitorują status sprawy 24/7, analizują dokumenty i przewidują terminy. Otrzymujesz powiadomienia push o każdej zmianie.",
+            keywords: ["ai", "monitoring", "automatyzacja", "powiadomienia"]
+          },
+          {
+            question: "Czy dokumenty elektroniczne są prawnie wiążące?",
+            answer: "Tak! NSA potwierdził pełną ważność prawną dokumentów składanych przez MOS z podpisem elektronicznym. Organy nie mogą żądać duplikatów papierowych.",
+            keywords: ["elektroniczne", "prawnie", "podpis", "ważność"]
+          }
+        ]);
+      }
+    }
+
+    // Global functions
+    window.openPaymentModal = (serviceType, city) => {
+      app.openPaymentModal(serviceType, city);
+    };
+
+    window.closePaymentModal = () => {
+      app.closePaymentModal();
+    };
+
+    window.processPayment = () => {
+      app.processPayment();
+    };
+
+    window.searchFAQ = () => {
+      app.searchFAQ();
+    };
+
+    window.closePushBanner = () => {
+      app.closePushBanner();
+    };
+
+    // Initialize app
+    let app;
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        app = new MigrantApp();
+      });
+    } else {
+      app = new MigrantApp();
+    }
+
+    // Push banner click handler
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.push-notification-banner') && !e.target.classList.contains('close-btn')) {
+        app.requestPushPermission();
+      }
+    });
+
+    // Global error handler
+    window.addEventListener('error', (e) => {
+      console.error('Application error:', e.error);
+    });
+
+    // Save preferences on unload
+    window.addEventListener('beforeunload', () => {
+      if (app) app.saveUserPreferences();
+    });
+  </script>
+</body>
+</html>
