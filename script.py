@@ -1,0 +1,321 @@
+# Let me create complete files without truncation
+# First, let's check the current file sizes and create full versions
+
+# Complete HTML file
+html_content = '''<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">MigrantGuidePoland - Kompleksowa pomoc dla migrantów w Polsce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand nav-brand" href="#hero">
+                    <i class="fas fa-passport"></i>
+                    <span class="brand-text" data-i18n="brand">MigrantGuidePoland</span>
+                </a>
+
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#about" data-i18n="nav.about">Про нас</a>
+                    <a class="nav-link" href="#map" data-i18n="nav.map">Карта термінів</a>
+                    <a class="nav-link" href="#faq" data-i18n="nav.faq">AI FAQ</a>
+                    <a class="nav-link" href="#law" data-i18n="nav.law">Право 2025</a>
+                    <a class="nav-link" href="#services" data-i18n="nav.services">Послуги MOS</a>
+                    <a class="nav-link" href="#contact" data-i18n="nav.contact">Контакт 24/7</a>
+                </div>
+
+                <div class="language-switcher ms-3">
+                    <button class="lang-btn" data-lang="pl">PL</button>
+                    <button class="lang-btn active" data-lang="ua">UA</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="hero-badge" data-i18n="hero.badge">Найшвидша обслуга MOS в Польщі</div>
+                <h1 class="hero-title">
+                    <span class="highlight" data-i18n="hero.title1">Революція</span> 
+                    <span data-i18n="hero.title2">в легалізації побуту</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">AI + MOS + Praca.gov.pl = Успіх</p>
+                <p class="hero-description">
+                    <span data-i18n="hero.desc1">Перша в Польщі платформа AI до моніторування процесів міграційних. Середній час реалізації:</span>
+                    <strong data-i18n="hero.days">30 днів</strong>. 
+                    <span data-i18n="hero.desc2">Обслуга в 4 мовах з перекладенями AI на 47 мов.</span>
+                </p>
+                <div class="hero-actions">
+                    <a href="#faq" class="btn btn-primary" data-i18n="hero.btn1">🤖Розпочни консультацію AI</a>
+                    <a href="#map" class="btn btn-ghost" data-i18n="hero.btn2">📊Дивись терміни в містах</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="about.title">Про нас</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Ваш надійний партнер в міграційних справах</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead" data-i18n="about.text">
+                        MigrantGuidePoland - це інноваційна платформа, що об'єднує штучний інтелект з глибоким знанням польського міграційного права. 
+                        Ми допомагаємо мігрантам швидко та ефективно вирішувати питання легалізації побуту, працевлаштування та інтеграції в польське суспільство.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="map.title">🗺️ Інтерактивна карта термінів MOS</h2>
+                <p class="section-subtitle" data-i18n="map.subtitle">Перевір актуальні терміни в урядах воєводських</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="map-container">
+                        <svg id="poland-map" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <path id="poland-outline" d="M150,100 L650,100 L680,130 L700,180 L720,250 L700,320 L650,380 L600,420 L550,450 L450,470 L350,460 L250,440 L180,400 L140,350 L120,300 L130,250 L140,200 L150,150 Z" 
+                                  fill="#e8f4f8" stroke="#2e8b9d" stroke-width="3"/>
+
+                            <!-- Cities with appointment times -->
+                            <circle cx="300" cy="200" r="8" fill="#27AE60" data-city="gdansk" data-time="30-35" class="city-marker"></circle>
+                            <text x="300" y="190" text-anchor="middle" font-size="10" fill="#2c3e50">Gdańsk</text>
+                            
+                            <circle cx="400" cy="180" r="8" fill="#F39C12" data-city="bydgoszcz" data-time="40-50" class="city-marker"></circle>
+                            <text x="400" y="170" text-anchor="middle" font-size="10" fill="#2c3e50">Bydgoszcz</text>
+                            
+                            <circle cx="500" cy="160" r="8" fill="#F39C12" data-city="olsztyn" data-time="45-50" class="city-marker"></circle>
+                            <text x="500" y="150" text-anchor="middle" font-size="10" fill="#2c3e50">Olsztyn</text>
+                            
+                            <circle cx="200" cy="280" r="8" fill="#27AE60" data-city="poznan" data-time="30-35" class="city-marker"></circle>
+                            <text x="200" y="270" text-anchor="middle" font-size="10" fill="#2c3e50">Poznań</text>
+                            
+                            <circle cx="350" cy="250" r="8" fill="#F39C12" data-city="lodz" data-time="40-45" class="city-marker"></circle>
+                            <text x="350" y="240" text-anchor="middle" font-size="10" fill="#2c3e50">Łódź</text>
+                            
+                            <circle cx="500" cy="280" r="8" fill="#F39C12" data-city="warszawa" data-time="45-50" class="city-marker"></circle>
+                            <text x="500" y="270" text-anchor="middle" font-size="10" fill="#2c3e50">Warszawa</text>
+                            
+                            <circle cx="400" cy="350" r="8" fill="#F39C12" data-city="kielce" data-time="40-45" class="city-marker"></circle>
+                            <text x="400" y="340" text-anchor="middle" font-size="10" fill="#2c3e50">Kielce</text>
+                            
+                            <circle cx="250" cy="380" r="8" fill="#F39C12" data-city="wroclaw" data-time="40-45" class="city-marker"></circle>
+                            <text x="250" y="370" text-anchor="middle" font-size="10" fill="#2c3e50">Wrocław</text>
+                            
+                            <circle cx="450" cy="400" r="8" fill="#E74C3C" data-city="krakow" data-time="60+" class="city-marker"></circle>
+                            <text x="450" y="390" text-anchor="middle" font-size="10" fill="#2c3e50">Kraków</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="legend-box">
+                        <h5 data-i18n="map.legend.title">Легенда термінів:</h5>
+                        <div class="legend-item">
+                            <span class="legend-color green"></span>
+                            <span data-i18n="map.legend.fast">30-35 днів (найшвидше)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color orange"></span>
+                            <span data-i18n="map.legend.standard">40-50 днів (стандарт)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color red"></span>
+                            <span data-i18n="map.legend.slow">60+ днів (затримані)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI FAQ Section -->
+    <section id="faq" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="faq.title">🤖 AI FAQ - Інтелігентні відповіді</h2>
+                <p class="section-subtitle" data-i18n="faq.subtitle">Постав питання AI про процедури міграційні</p>
+            </div>
+
+            <div class="faq-search mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Постав питання про Карту Перебування, MOS, Praca.gov.pl..." data-i18n-placeholder="faq.placeholder">
+                    <button class="btn btn-primary faq-search-btn" type="button" data-i18n="faq.search">🔍</button>
+                </div>
+            </div>
+
+            <div class="faq-questions">
+                <div class="faq-item">
+                    <h5 data-i18n="faq.q1">Скільки часу триває процедура Карти Побуту через MOS?</h5>
+                    <p data-i18n="faq.a1">Завдяки нашому AI моніторингу середній час то 30-45 днів в залежності від міста. Система MOS значно прискорила процедури від 2024 року.</p>
+                </div>
+                <div class="faq-item">
+                    <h5 data-i18n="faq.q2">Чи портал Praca.gov.pl вимагає тесту ринку праці?</h5>
+                    <p data-i18n="faq.a2">Ні, від 2024 року більшість заявок через Praca.gov.pl є звільнена з тесту ринку праці. Наш AI аналізує кожний випадок індивідуально.</p>
+                </div>
+                <div class="faq-item">
+                    <h5 data-i18n="faq.q3">Які документи є вимагані до Громадянства?</h5>
+                    <p data-i18n="faq.a3">Список документів залежить від основи правної. Наш AI Premium аналізує Твій випадок і приготовує персоналізовану листу вимагань.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Law 2025 Section -->
+    <section id="law" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="law.title">⚖️ Право 2025 - Нові Зміни</h2>
+                <p class="section-subtitle" data-i18n="law.subtitle">Останні зміни в міграційному праві</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h5 data-i18n="law.item1.title">Спрощення процедур MOS</h5>
+                    <p data-i18n="law.item1.text">Від січня 2025 MOS запроваджує нові цифрові процедури</p>
+                </div>
+                <div class="timeline-item">
+                    <h5 data-i18n="law.item2.title">Новий закон про працю</h5>
+                    <p data-i18n="law.item2.text">Розширені права для працівників з країн третіх</p>
+                </div>
+                <div class="timeline-item">
+                    <h5 data-i18n="law.item3.title">AI в урядових процедурах</h5>
+                    <p data-i18n="law.item3.text">Впровадження штучного інтелекту в оцінці заявок</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="services.title">🏢 Послуги MOS</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">Повний спектр міграційних послуг</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-id-card"></i>
+                        <h5 data-i18n="services.card1.title">Карта Побуту</h5>
+                        <p data-i18n="services.card1.text">Оформлення та продовження карти побуту</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h5 data-i18n="services.card2.title">Дозвіл на роботу</h5>
+                        <p data-i18n="services.card2.text">Дозволи на роботу та зміна роботодавця</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-flag"></i>
+                        <h5 data-i18n="services.card3.title">Громадянство</h5>
+                        <p data-i18n="services.card3.text">Процедури отримання польського громадянства</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="contact.title">📞 Контакт 24/7</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Зв'яжись з нами в кожній хвилині</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5 data-i18n="contact.phone.title">Телефон 24/7</h5>
+                        <a href="tel:+48512617106" class="contact-link">512 617 106</a>
+                        <small data-i18n="contact.phone.desc">Доступні цілодобово</small>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5 data-i18n="contact.email.title">Email</h5>
+                        <a href="mailto:migrantguidepoland@gmail.com" class="contact-link">migrantguidepoland@gmail.com</a>
+                        <small data-i18n="contact.email.desc">Відповідаємо в 2г</small>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h5 data-i18n="contact.whatsapp.title">WhatsApp</h5>
+                        <a href="https://wa.me/48512617106" class="contact-link">512 617 106</a>
+                        <small data-i18n="contact.whatsapp.desc">Чат в часі дійсному</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h6>🤖 AI Assistant</h6>
+            <button class="chat-close" id="chatClose">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <span data-i18n="chat.welcome">Привіт! Я AI асистент MigrantGuidePoland. Як можу допомогти?</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Напишіть питання..." data-i18n-placeholder="chat.placeholder">
+                <button id="chatSend">📤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Launch Button -->
+    <div class="chat-launch" id="chatLaunch">
+        <i class="fas fa-comments"></i>
+        <span class="notification-badge">1</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>'''
+
+# Save HTML file
+with open('index_complete.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Complete HTML file created: {len(html_content)} characters")
