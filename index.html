@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#020617">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="MigrantGuide">
+    
+    <title>MigrantGuide – Agencja Legalizacji Pobytu i Pracy | Monitoring MOS</title>
+    <meta name="description" content="Skuteczna legalizacja pobytu w Polsce. Monitoring urzędów (MOS), audyt dokumentów, zezwolenia na pracę. Sprawdź czas oczekiwania w Twoim mieście.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MigrantGuide – Legalizacja bez stresu">
+    <meta property="og:description" content="Przyspiesz swoją sprawę dzięki technologii. Audyt i wnioski online.">
+    <meta property="og:image" content="assets/og-cover.jpg">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "MigrantGuide",
+      "image": "https://migrantguide.pl/assets/logo.png",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Złota 44",
+        "addressLocality": "Warszawa",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48512617106",
+      "openingHours": "Mo-Fr 09:00-17:00"
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+    <div class="lang-float">
+        <div class="glass-panel">
+            <button class="lang-btn active" onclick="setLang('pl')">PL</button>
+            <span class="sep">/</span>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <span class="sep">/</span>
+            <button class="lang-btn" onclick="setLang('ua')">UA</button>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <div class="brand-logo"><i class="fas fa-passport"></i></div>
+                <div class="d-flex flex-column">
+                    <span class="brand-name">MigrantGuide</span>
+                    <span class="brand-sub" data-key="brand_sub">Agencja Relokacyjna</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#mapa" data-key="nav_map">Monitoring</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process" data-key="nav_process">Proces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews" data-key="nav_reviews">Opinie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+                <div class="nav-cta ms-lg-4">
+                    <a href="#booking" class="btn btn-primary btn-sm rounded-pill px-4 fw-bold shadow-glow" data-key="nav_cta">Umów Wizytę</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="grid-bg"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="status-badge animate-fade">
+                        <span class="pulse-dot"></span> <span data-key="hero_status">System MOS: Dostępny</span>
+                    </div>
+                    <h1 class="hero-title animate-up">
+                        <span data-key="hero_t1">Twój Pobyt w Polsce.</span><br>
+                        <span class="text-gradient" data-key="hero_t2">Legalnie i Szybko.</span>
+                    </h1>
+                    <p class="hero-desc animate-up delay-1" data-key="hero_desc">
+                        Jesteśmy niezależną agencją doradczą. Pomagamy przejść przez procedury urzędowe bez stresu i błędów.
+                    </p>
+                    <div class="hero-actions animate-up delay-2">
+                        <a href="#booking" class="btn btn-primary btn-lg px-5" data-key="btn_primary">Darmowa Wycena</a>
+                        <a href="#mapa" class="btn btn-secondary btn-lg px-5" data-key="btn_secondary">Mapa Czasu</a>
+                    </div>
+                    <div class="trust-row animate-up delay-3">
+                        <div class="trust-item">
+                            <strong>1800+</strong>
+                            <span data-key="stat_clients">Klientów</span>
+                        </div>
+                        <div class="vr-sep"></div>
+                        <div class="trust-item">
+                            <strong>98%</strong>
+                            <span data-key="stat_success">Skuteczności</span>
+                        </div>
+                        <div class="vr-sep"></div>
+                        <div class="trust-item">
+                            <div class="avatars">
+                                <img src="https://ui-avatars.com/api/?name=A&background=random" alt="">
+                                <img src="https://ui-avatars.com/api/?name=B&background=random" alt="">
+                                <img src="https://ui-avatars.com/api/?name=C&background=random" alt="">
+                            </div>
+                            <span data-key="stat_reviews">4.9/5 Opinie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-card glass-card p-4 tilt-effect">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="text-white mb-0">Wniosek: Karta Pobytu</h5>
+                            <span class="badge bg-success">Weryfikacja</span>
+                        </div>
+                        <div class="progress-stack mb-3">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <div class="d-flex gap-3 text-white-50 small">
+                            <span><i class="fas fa-check-circle text-primary"></i> Dokumenty</span>
+                            <span><i class="fas fa-check-circle text-primary"></i> Opłata</span>
+                            <span><i class="fas fa-sync fa-spin"></i> Decyzja</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="mapa" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white" data-key="map_title">Centrum Monitoringu</h2>
+                <p class="text-muted" data-key="map_desc">Realne czasy oczekiwania w 2025 roku.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-main map-wrapper border-glow">
+                    <div id="poland-map"></div>
+                    <div class="map-overlay">Live Data</div>
+                </div>
+                <div class="bento-side">
+                    <div class="stat-card glass-card h-100 p-4">
+                        <h5 class="text-white mb-4" data-key="region_title">Status Województw</h5>
+                        <div class="region-list">
+                            <div class="region-item success">
+                                <div class="dot"></div>
+                                <div>
+                                    <strong>Pomorskie</strong>
+                                    <small>~3 msc (Szybko)</small>
+                                </div>
+                            </div>
+                            <div class="region-item warning">
+                                <div class="dot"></div>
+                                <div>
+                                    <strong>Mazowieckie</strong>
+                                    <small>~7 msc (Standard)</small>
+                                </div>
+                            </div>
+                            <div class="region-item danger">
+                                <div class="dot"></div>
+                                <div>
+                                    <strong>Małopolskie</strong>
+                                    <small>~12+ msc (Zator)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-5 bg-subtle">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-num">01</div>
+                        <h4 data-key="step1_t">Analiza</h4>
+                        <p data-key="step1_d">Bezpłatna weryfikacja Twojej sytuacji prawnej.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-num">02</div>
+                        <h4 data-key="step2_t">Kompletowanie</h4>
+                        <p data-key="step2_d">Zbieramy i tłumaczymy niezbędne dokumenty.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-num">03</div>
+                        <h4 data-key="step3_t">Złożenie</h4>
+                        <p data-key="step3_d">Wniosek trafia do systemu. Rezerwujemy wizytę.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card highlight">
+                        <div class="step-num">04</div>
+                        <h4 data-key="step4_t">Decyzja</h4>
+                        <p data-key="step4_d">Monitorujemy sprawę aż do odbioru karty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-5">
+        <div class="container">
+            <div class="glass-card booking-wrapper p-0 overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-lg-5 bg-gradient-dark p-5 d-flex flex-column justify-content-center">
+                        <h3 class="text-white mb-4" data-key="book_title">Umów Konsultację</h3>
+                        <p class="text-white-50 mb-4" data-key="book_desc">Wybierz termin rozmowy z ekspertem.</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check text-success"></i> <span data-key="ben_1">Analiza dokumentów</span></li>
+                            <li><i class="fas fa-check text-success"></i> <span data-key="ben_2">Strategia działania</span></li>
+                            <li><i class="fas fa-check text-success"></i> <span data-key="ben_3">Pełna poufność</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 p-5 bg-darker">
+                        <form id="bookingForm" class="needs-validation">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label-sm" data-key="lbl_name">Imię i Nazwisko</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-sm" data-key="lbl_phone">Telefon</label>
+                                    <input type="tel" class="form-control" required placeholder="+48...">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-sm" data-key="lbl_service">Usługa</label>
+                                    <select class="form-select">
+                                        <option value="pobyt">Karta Pobytu</option>
+                                        <option value="praca">Zezwolenie na pracę</option>
+                                        <option value="obywatelstwo">Obywatelstwo</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-sm mb-2" data-key="lbl_time">Dostępne Terminy</label>
+                                    <div class="time-grid">
+                                        <div class="time-chip">09:00</div>
+                                        <div class="time-chip">11:00</div>
+                                        <div class="time-chip">13:00</div>
+                                        <div class="time-chip">15:00</div>
+                                    </div>
+                                    <input type="hidden" id="timeSlot" required>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold" id="submitBtn">
+                                        <span class="btn-txt" data-key="btn_submit">Rezerwuj Termin</span>
+                                        <span class="spinner d-none"><i class="fas fa-spinner fa-spin"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="successMsg" class="alert alert-success mt-3 d-none">
+                                <i class="fas fa-check-circle"></i> Zgłoszenie przyjęte!
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darker border-top border-secondary py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="brand mb-3 d-flex align-items-center gap-2">
+                        <i class="fas fa-passport text-primary"></i>
+                        <span class="fw-bold text-white">MigrantGuide</span>
+                    </div>
+                    <p class="text-muted small">Twoje bezpieczeństwo prawne w Polsce. Niezależna agencja doradcza.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white mb-3" data-key="contact_header">Kontakt</h6>
+                    <ul class="list-unstyled text-muted small contact-info">
+                        <li><i class="fas fa-phone me-2"></i> +48 512 617 106</li>
+                        <li><i class="fas fa-envelope me-2"></i> migrantguidepoland@gmail.com</li>
+                        <li><i class="fas fa-map-pin me-2"></i> Warszawa, Złota 44</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white mb-3">Dokumenty</h6>
+                    <ul class="list-unstyled text-muted small">
+                        <li><a href="#" class="text-muted text-decoration-none hover-link">Polityka Prywatności</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none hover-link">Regulamin Usług</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-4 border-top border-secondary">
+                <small class="text-muted">&copy; 2025 MigrantGuide. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget">
+        <button class="chat-btn shadow-glow" onclick="toggleChat()">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        <div id="chatWindow" class="chat-interface">
+            <div class="chat-head">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <strong class="d-block text-white" style="font-size:14px" data-key="chat_name">Asystent AI</strong>
+                        <span class="text-success" style="font-size:10px">Online</span>
+                    </div>
+                </div>
+                <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="msg bot" data-key="chat_welcome">Cześć! Jak mogę Ci pomóc?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="...">
+                <button onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
